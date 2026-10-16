@@ -400,9 +400,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'San Salvador de Jujuy, Jujuy, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/jorge-rizzotti.png',
-                socialMedia: {
-          x: { handle: "@jorgerizzotti", url: "https://x.com/jorgerizzotti" },
-          instagram: { handle: "@jorgerizzotti", url: "https://www.instagram.com/jorgerizzotti" },
+        socialMedia: {
+          instagram: { handle: "@colo.rizzotti", url: "https://www.instagram.com/colo.rizzotti/" },
+          facebook: { handle: "ColoRizzotti", url: "https://www.facebook.com/ColoRizzotti/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jrizzotti/'
       },
