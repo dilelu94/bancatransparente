@@ -249,8 +249,8 @@ export const SESSIONS_DATA: Session[] = [
         status: 'ausente',
         imageUrl: '/deputies/gerardo-cipolini.png',
                 socialMedia: {
-          x: { handle: "@GerardoCipolini", url: "https://x.com/GerardoCipolini" },
-          instagram: { handle: "@gerardocipolini", url: "https://www.instagram.com/gerardocipolini" },
+          instagram: { handle: "@gerardocipoliniok", url: "https://www.instagram.com/gerardocipoliniok/" },
+          facebook: { handle: "gerardocipolini", url: "https://www.facebook.com/gerardocipolini" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gcipolini/'
       },
