@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Deputy } from '../types';
-import { X, Search, MapPin, Building2, ExternalLink, Home, GitPullRequest } from 'lucide-react';
+import { X, Search, MapPin, Building2, ExternalLink, Home, MessageSquarePlus } from 'lucide-react';
 
 interface DeputyModalProps {
   deputy: Deputy | null;
@@ -27,6 +27,20 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
   const searchQuery = encodeURIComponent(`${deputy.name} (${deputy.party})`);
   const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}&sourceid=chrome&ie=UTF-8&source=chrome.ctxt`;
   
+  // Pre-filled GitHub issue URL to make contributing address and sources effortless
+  const issueTitle = encodeURIComponent(`Aporte de domicilio: ${deputy.name}`);
+  const issueBody = encodeURIComponent(
+    `### Legislador: ${deputy.name}\n` +
+    `**Bloque:** ${deputy.party}\n` +
+    `**Provincia:** ${deputy.province}\n\n` +
+    `---\n\n` +
+    `### Domicilio propuesto:\n` +
+    `<!-- Calle, número, localidad, provincia, código postal -->\n\n\n` +
+    `### Fuentes y enlaces de verificación pública:\n` +
+    `<!-- Enlaces a AFIP, Boletín Oficial, directorio mercantil o fuentes oficiales -->\n`
+  );
+  const githubIssueUrl = `https://github.com/dilelu94/bancatransparente/issues/new?title=${issueTitle}&body=${issueBody}`;
+
   // Embedded Google Map only when address is available
   const mapEmbedUrl = deputy.address
     ? `https://maps.google.com/maps?q=${encodeURIComponent(deputy.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`
@@ -171,18 +185,21 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
                   Domicilio aún no registrado
                 </h4>
                 <p className="text-xs text-amber-800 max-w-md mx-auto leading-relaxed">
-                  Actualmente no contamos con el domicilio público o fiscal verificado de este legislador en la base de datos comunitaria.
+                  Actualmente no disponemos del domicilio fiscal o verificado de este legislador en la base de datos comunitaria.
+                </p>
+                <p className="text-xs text-amber-700 max-w-md mx-auto">
+                  Si cuentas con enlaces, fuentes públicas (AFIP, Boletín Oficial, registros comerciales) o datos relevantes, puedes aportarlo fácilmente creando un Issue.
                 </p>
               </div>
               <div className="pt-2">
                 <a
-                  href="https://github.com/dilelu94/bancatransparente"
+                  href={githubIssueUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow-sm hover:shadow transition-all"
                 >
-                  <GitPullRequest className="w-4 h-4 text-sky-400" />
-                  <span>Aportar domicilio con un Pull Request en GitHub</span>
+                  <MessageSquarePlus className="w-4 h-4 text-sky-400" />
+                  <span>Aportar domicilio con fuentes (Crear Issue en GitHub)</span>
                   <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </div>
