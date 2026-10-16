@@ -7,6 +7,7 @@ export interface Deputy {
   status: 'ausente' | 'presente';
   role?: string;
   imageUrl?: string;
+  profileUrl?: string;
 }
 
 export interface Session {

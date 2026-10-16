@@ -28,6 +28,8 @@ describe('SESSIONS_DATA', () => {
       expect(deputy.province).toBeTruthy();
       expect(deputy.locationName).toBeTruthy();
       expect(deputy.status).toBe('ausente');
+      expect(deputy.profileUrl).toBeTruthy();
+      expect(deputy.profileUrl).toMatch(/^https:\/\/www\.hcdn\.gob\.ar\/diputados\//);
     });
   });
 

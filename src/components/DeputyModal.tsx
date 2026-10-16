@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Deputy } from '../types';
-import { X, Search, MapPin, ShieldCheck, Building2 } from 'lucide-react';
+import { X, Search, MapPin, ShieldCheck, Building2, ExternalLink } from 'lucide-react';
 
 interface DeputyModalProps {
   deputy: Deputy | null;
@@ -95,6 +95,20 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
             <p>
               <strong>Actividad en Recinto:</strong> Figura entre los legisladores ausentes que impidieron alcanzar el quórum de 129 diputados en la sesión especial convocada para rechazar el DNU 70/2023 y tratar el financiamiento universitario.
             </p>
+            {deputy.profileUrl && (
+              <p>
+                <strong>Perfil Oficial HCDN:</strong>{' '}
+                <a
+                  href={deputy.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky-600 hover:text-sky-800 underline inline-flex items-center gap-1 font-medium"
+                >
+                  <span>{deputy.profileUrl}</span>
+                  <ExternalLink className="w-3 h-3 flex-shrink-0" />
+                </a>
+              </p>
+            )}
           </div>
 
           {/* Privacy & Safety Note */}
@@ -134,7 +148,18 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
             Información de acceso público parlamentario
           </span>
 
-          <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
+            {deputy.profileUrl && (
+              <a
+                href={deputy.profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-900 text-white text-sm font-semibold rounded-lg shadow-sm hover:shadow transition-all focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+              >
+                <ExternalLink className="w-4 h-4 text-sky-400" />
+                <span>Perfil Oficial HCDN</span>
+              </a>
+            )}
             <a
               href={googleSearchUrl}
               target="_blank"
