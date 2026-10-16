@@ -387,9 +387,8 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Córdoba, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/alejandra-torres.png',
-                socialMedia: {
+        socialMedia: {
           x: { handle: "@Ale_Torres60", url: "https://x.com/Ale_Torres60" },
-          instagram: { handle: "@ale_torresok", url: "https://www.instagram.com/ale_torresok" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ltorres/'
       },
