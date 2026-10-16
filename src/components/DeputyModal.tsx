@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Deputy } from '../types';
-import { X, Search, MapPin, Building2, ExternalLink, Home, MessageSquarePlus } from 'lucide-react';
+import { X, Search, MapPin, Building2, ExternalLink, Home, MessageSquarePlus, Github } from 'lucide-react';
 
 interface DeputyModalProps {
   deputy: Deputy | null;
@@ -188,18 +188,37 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
                   Actualmente no disponemos del domicilio fiscal o verificado de este legislador en la base de datos comunitaria.
                 </p>
                 <p className="text-xs text-amber-700 max-w-md mx-auto">
-                  Si cuentas con enlaces, fuentes públicas (AFIP, Boletín Oficial, registros comerciales) o datos relevantes, puedes aportarlo fácilmente creando un Issue.
+                  Si cuentas con enlaces o fuentes públicas verificables (AFIP, Boletín Oficial, registros comerciales), puedes aportarlo en el{' '}
+                  <a
+                    href="https://github.com/dilelu94/bancatransparente"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sky-700 hover:text-sky-900 font-semibold underline"
+                  >
+                    repositorio de GitHub
+                  </a>{' '}
+                  abriendo un Issue.
                 </p>
               </div>
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2">
                 <a
                   href={githubIssueUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow-sm hover:shadow transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow-sm hover:shadow transition-all"
                 >
                   <MessageSquarePlus className="w-4 h-4 text-sky-400" />
-                  <span>Aportar domicilio con fuentes (Crear Issue en GitHub)</span>
+                  <span>Aportar domicilio (Crear Issue)</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                </a>
+                <a
+                  href="https://github.com/dilelu94/bancatransparente"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 text-xs font-semibold rounded-lg shadow-sm hover:shadow transition-all"
+                >
+                  <Github className="w-4 h-4 text-slate-700" />
+                  <span>Ver Repositorio</span>
                   <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                 </a>
               </div>
