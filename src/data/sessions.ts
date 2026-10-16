@@ -20,7 +20,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Santiago del Estero, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/estela-mary-neder.png',
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/eneder/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/eneder/',
+        cuit: '23-13702610-4',
+        dni: '13.702.610'
       },
       {
         id: 'paulo-agustin-tita',
