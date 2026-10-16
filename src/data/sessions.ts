@@ -360,9 +360,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Río Gallegos, Santa Cruz, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/jose-luis-garrido.png',
-                socialMedia: {
-          x: { handle: "@JoseLuisGarrid8", url: "https://x.com/JoseLuisGarrid8" },
-          instagram: { handle: "@joseluisgarridosc", url: "https://www.instagram.com/joseluisgarridosc" },
+        socialMedia: {
+          instagram: { handle: "@garridojoseluisok", url: "https://www.instagram.com/garridojoseluisok/" },
+          facebook: { handle: "gestiongarrido", url: "https://www.facebook.com/gestiongarrido" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jgarrido/'
       },
