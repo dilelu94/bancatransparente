@@ -428,9 +428,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Mendoza, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/lourdes-micaela-arrieta.png',
-                socialMedia: {
-          x: { handle: "@lulumicapilar", url: "https://x.com/lulumicapilar" },
-          instagram: { handle: "@lourdesmarrieta", url: "https://www.instagram.com/lourdesmarrieta" },
+        socialMedia: {
+          x: { handle: "@lulumicart", url: "https://x.com/lulumicart" },
+          instagram: { handle: "@diputadaarrieta", url: "https://www.instagram.com/diputadaarrieta/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/larrieta/'
       },
