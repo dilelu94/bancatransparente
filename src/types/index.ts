@@ -15,6 +15,11 @@ export interface Deputy {
   estimatedDietGross?: number;
   estimatedDietNet?: number;
   hasDesarraigo?: boolean;
+  socialMedia?: {
+    x?: { handle: string; url: string };
+    instagram?: { handle: string; url: string };
+    facebook?: { handle: string; url: string };
+  };
 }
 
 export interface Session {

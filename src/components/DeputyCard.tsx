@@ -95,6 +95,26 @@ export const DeputyCard: React.FC<DeputyCardProps> = ({ deputy, onClick }) => {
               {deputy.party}
             </span>
           </div>
+
+          {deputy.socialMedia && Object.keys(deputy.socialMedia).length > 0 && (
+            <div className="mt-3 flex items-center gap-1.5 text-[11px] text-slate-500">
+              {deputy.socialMedia.x && (
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-slate-900 text-white font-bold text-[10px]" title={`X: ${deputy.socialMedia.x.handle}`}>
+                  𝕏
+                </span>
+              )}
+              {deputy.socialMedia.instagram && (
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 text-white font-bold text-[10px]" title={`Instagram: ${deputy.socialMedia.instagram.handle}`}>
+                  📷
+                </span>
+              )}
+              {deputy.socialMedia.facebook && (
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-blue-600 text-white font-bold text-[10px]" title={`Facebook: ${deputy.socialMedia.facebook.handle}`}>
+                  f
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </div>
 

@@ -32,6 +32,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Santiago del Estero, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/estela-mary-neder.png',
+                socialMedia: {
+          facebook: { handle: "estela.neder", url: "https://www.facebook.com/estela.neder" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/eneder/',
         cuit: '23-13702610-4',
         dni: '13.702.610'
@@ -46,6 +49,10 @@ export const SESSIONS_DATA: Session[] = [
         addressSource: 'https://w20argentina.com/empresa/tita-paulo-agustin-20250816031',
         status: 'ausente',
         imageUrl: '/deputies/paulo-agustin-tita.png',
+                socialMedia: {
+          instagram: { handle: "@titaagustin", url: "https://www.instagram.com/titaagustin" },
+          facebook: { handle: "agustintitaok", url: "https://www.facebook.com/agustintitaok" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ptita/',
         cuit: '20-25081603-1',
         dni: '25.081.603'
@@ -60,6 +67,10 @@ export const SESSIONS_DATA: Session[] = [
         addressSource: 'https://w20argentina.com/empresa/de-sensi-maria-florencia-27332948895',
         status: 'ausente',
         imageUrl: '/deputies/maria-florencia-de-sensi.png',
+                socialMedia: {
+          x: { handle: "@flordesensi", url: "https://x.com/flordesensi" },
+          instagram: { handle: "@flordesensi", url: "https://www.instagram.com/flordesensi" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mdesensi/',
         cuit: '27-33294889-5',
         dni: '33.294.889'
@@ -72,6 +83,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'La Matanza, Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/alejandro-finocchiaro.png',
+                socialMedia: {
+          x: { handle: "@alefinocchiaro", url: "https://x.com/alefinocchiaro" },
+          instagram: { handle: "@alefinocchiaro", url: "https://www.instagram.com/alefinocchiaro" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/afinocchiaro/'
       },
       {
@@ -82,6 +97,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Avellaneda, Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/cristian-a-ritondo.png',
+                socialMedia: {
+          x: { handle: "@cristianritondo", url: "https://x.com/cristianritondo" },
+          instagram: { handle: "@cristianritondo", url: "https://www.instagram.com/cristianritondo" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/critondo/'
       },
       {
@@ -92,6 +111,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/javier-sanchez-wrba.png',
+                socialMedia: {
+          x: { handle: "@jsanchezwrba", url: "https://x.com/jsanchezwrba" },
+          instagram: { handle: "@javiersanchezwrba", url: "https://www.instagram.com/javiersanchezwrba" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jsanchezw/'
       },
       {
@@ -102,6 +125,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Pinamar, Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/martin-yeza.png',
+                socialMedia: {
+          x: { handle: "@martinyeza", url: "https://x.com/martinyeza" },
+          instagram: { handle: "@martinyeza", url: "https://www.instagram.com/martinyeza" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/myeza/'
       },
       {
@@ -112,6 +139,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/fernando-de-andreis.png',
+                socialMedia: {
+          x: { handle: "@deAndreis", url: "https://x.com/deAndreis" },
+          instagram: { handle: "@fernandodeandreis", url: "https://www.instagram.com/fernandodeandreis" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/fdeandreis/'
       },
       {
@@ -122,6 +153,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/daiana-fernandez-molero.png',
+                socialMedia: {
+          x: { handle: "@daianafmolero", url: "https://x.com/daianafmolero" },
+          instagram: { handle: "@daianafmolero", url: "https://www.instagram.com/daianafmolero" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/dfernandezm/'
       },
       {
@@ -132,6 +167,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/antonela-giampieri.png',
+                socialMedia: {
+          instagram: { handle: "@antogiampieri", url: "https://www.instagram.com/antogiampieri" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/agiampieri/'
       },
       {
@@ -142,6 +180,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/alvaro-gonzalez.png',
+                socialMedia: {
+          x: { handle: "@alvarogonzalez_", url: "https://x.com/alvarogonzalez_" },
+          instagram: { handle: "@alvarogonzalezok", url: "https://www.instagram.com/alvarogonzalezok" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/agonzalez/'
       },
       {
@@ -152,6 +194,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Paraná, Entre Ríos, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/alicia-fregonese.png',
+                socialMedia: {
+          x: { handle: "@aliciafregonese", url: "https://x.com/aliciafregonese" },
+          instagram: { handle: "@aliciafregonese", url: "https://www.instagram.com/aliciafregonese" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/afregonese/'
       },
       {
@@ -162,6 +208,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Santa Rosa, La Pampa, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/martin-ardohain.png',
+                socialMedia: {
+          x: { handle: "@catoardohain", url: "https://x.com/catoardohain" },
+          instagram: { handle: "@catoardohain", url: "https://www.instagram.com/catoardohain" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mardohain/'
       },
       {
@@ -172,6 +222,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Posadas, Misiones, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/emmanuel-bianchetti.png',
+                socialMedia: {
+          x: { handle: "@ebianchetti_", url: "https://x.com/ebianchetti_" },
+          instagram: { handle: "@emmanuelbianchetti", url: "https://www.instagram.com/emmanuelbianchetti" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/rbianchetti/'
       },
       {
@@ -182,6 +236,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Córdoba, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/guillermo-cesar-aguero.png',
+                socialMedia: {
+          x: { handle: "@guilleaguero", url: "https://x.com/guilleaguero" },
+          instagram: { handle: "@guillermoaguero_", url: "https://www.instagram.com/guillermoaguero_" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gcaguero/'
       },
       {
@@ -192,6 +250,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Resistencia, Chaco, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/gerardo-cipolini.png',
+                socialMedia: {
+          x: { handle: "@GerardoCipolini", url: "https://x.com/GerardoCipolini" },
+          instagram: { handle: "@gerardocipolini", url: "https://www.instagram.com/gerardocipolini" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gcipolini/'
       },
       {
@@ -202,6 +264,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Corrientes, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/diogenes-ignacio-gonzalez.png',
+                socialMedia: {
+          x: { handle: "@DiogenesIG", url: "https://x.com/DiogenesIG" },
+          instagram: { handle: "@diogenesigonzalez", url: "https://www.instagram.com/diogenesigonzalez" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/digonzalez/'
       },
       {
@@ -212,6 +278,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Crespo, Entre Ríos, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/dario-schneider.png',
+                socialMedia: {
+          x: { handle: "@DarioSchneider5", url: "https://x.com/DarioSchneider5" },
+          instagram: { handle: "@darioschneiderok", url: "https://www.instagram.com/darioschneiderok" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/aschneider/'
       },
       {
@@ -222,6 +292,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Mendoza, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/lisandro-nieri.png',
+                socialMedia: {
+          x: { handle: "@LisandroNieri", url: "https://x.com/LisandroNieri" },
+          instagram: { handle: "@lisandronieri", url: "https://www.instagram.com/lisandronieri" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/lnieri/'
       },
       {
@@ -232,6 +306,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Mendoza, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/pamela-fernanda-verasay.png',
+                socialMedia: {
+          x: { handle: "@PameVerasay", url: "https://x.com/PameVerasay" },
+          instagram: { handle: "@pamelaverasay", url: "https://www.instagram.com/pamelaverasay" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/pverasay/'
       },
       {
@@ -242,6 +320,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Chivilcoy, Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/eduardo-falcone.png',
+                socialMedia: {
+          x: { handle: "@efalcone62", url: "https://x.com/efalcone62" },
+          instagram: { handle: "@eduardofalconeok", url: "https://www.instagram.com/eduardofalconeok" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/efalcone/'
       },
       {
@@ -252,6 +334,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/oscar-zago.png',
+                socialMedia: {
+          x: { handle: "@OscarZagoOK", url: "https://x.com/OscarZagoOK" },
+          instagram: { handle: "@oscarzagooficial", url: "https://www.instagram.com/oscarzagooficial" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ozago/'
       },
       {
@@ -262,6 +348,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/karina-banfi.png',
+                socialMedia: {
+          x: { handle: "@KBanfi", url: "https://x.com/KBanfi" },
+          instagram: { handle: "@karina_banfi", url: "https://www.instagram.com/karina_banfi" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/kbanfi/'
       },
       {
@@ -272,6 +362,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Río Gallegos, Santa Cruz, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/jose-luis-garrido.png',
+                socialMedia: {
+          x: { handle: "@JoseLuisGarrid8", url: "https://x.com/JoseLuisGarrid8" },
+          instagram: { handle: "@joseluisgarridosc", url: "https://www.instagram.com/joseluisgarridosc" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jgarrido/'
       },
       {
@@ -282,6 +376,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Comodoro Rivadavia, Chubut, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/jorge-antonio-avila.png',
+                socialMedia: {
+          facebook: { handle: "jorgelomaavila", url: "https://www.facebook.com/jorgelomaavila" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jaavila/'
       },
       {
@@ -292,6 +389,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Córdoba, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/alejandra-torres.png',
+                socialMedia: {
+          x: { handle: "@Ale_Torres60", url: "https://x.com/Ale_Torres60" },
+          instagram: { handle: "@ale_torresok", url: "https://www.instagram.com/ale_torresok" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ltorres/'
       },
       {
@@ -302,6 +403,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'San Salvador de Jujuy, Jujuy, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/jorge-rizzotti.png',
+                socialMedia: {
+          x: { handle: "@jorgerizzotti", url: "https://x.com/jorgerizzotti" },
+          instagram: { handle: "@jorgerizzotti", url: "https://www.instagram.com/jorgerizzotti" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jrizzotti/'
       },
       {
@@ -312,6 +417,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'San Salvador de Jujuy, Jujuy, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/maria-ines-zigaran.png',
+                socialMedia: {
+          x: { handle: "@InesZigaran", url: "https://x.com/InesZigaran" },
+          instagram: { handle: "@ineszigaran", url: "https://www.instagram.com/ineszigaran" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mzigaran/'
       },
       {
@@ -322,6 +431,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Mendoza, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/lourdes-micaela-arrieta.png',
+                socialMedia: {
+          x: { handle: "@lulumicapilar", url: "https://x.com/lulumicapilar" },
+          instagram: { handle: "@lourdesmarrieta", url: "https://www.instagram.com/lourdesmarrieta" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/larrieta/'
       },
       {
@@ -332,6 +445,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Bariloche, Río Negro, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/sergio-eduardo-capozzi.png',
+                socialMedia: {
+          x: { handle: "@SergioCapozzi", url: "https://x.com/SergioCapozzi" },
+          instagram: { handle: "@sergiocapozzi", url: "https://www.instagram.com/sergiocapozzi" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/scapozzi/'
       },
       {
@@ -342,6 +459,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Rosario, Santa Fe, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/jose-nunez.png',
+                socialMedia: {
+          x: { handle: "@JoseNunezOK", url: "https://x.com/JoseNunezOK" },
+          instagram: { handle: "@josenunezok", url: "https://www.instagram.com/josenunezok" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jnunez/'
       },
       {
@@ -352,6 +473,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Gálvez, Santa Fe, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/gisela-scaglia.png',
+                socialMedia: {
+          x: { handle: "@GScaglia", url: "https://x.com/GScaglia" },
+          instagram: { handle: "@gisela.scaglia", url: "https://www.instagram.com/gisela.scaglia" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gscaglia/'
       },
       {
@@ -362,6 +487,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Salta, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/bernardo-biella.png',
+                socialMedia: {
+          x: { handle: "@BiellaBernardo", url: "https://x.com/BiellaBernardo" },
+          instagram: { handle: "@bernardobiella", url: "https://www.instagram.com/bernardobiella" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/bbiellac/'
       },
       {
@@ -372,6 +501,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Salta, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/pablo-outes.png',
+                socialMedia: {
+          x: { handle: "@PabloOutesOk", url: "https://x.com/PabloOutesOk" },
+          instagram: { handle: "@pablooutesok", url: "https://www.instagram.com/pablooutesok" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/poutes/'
       },
       {
@@ -382,6 +515,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Cerrillos, Salta, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/yolanda-vega.png',
+                socialMedia: {
+          x: { handle: "@YolandaVegaOK", url: "https://x.com/YolandaVegaOK" },
+          instagram: { handle: "@yolandagvegadip", url: "https://www.instagram.com/yolandagvegadip" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/yvega/'
       },
       {
@@ -392,6 +529,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Posadas, Misiones, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/claudio-alvarez.png',
+                socialMedia: {
+          facebook: { handle: "claudioalvarez", url: "https://www.facebook.com/claudioalvarez" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/caalvarez/'
       },
       {
@@ -402,6 +542,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Posadas, Misiones, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/gerardo-gustavo-gonzalez.png',
+                socialMedia: {
+          x: { handle: "@GustavoGFormosa", url: "https://x.com/GustavoGFormosa" },
+          instagram: { handle: "@gustavo_gonzalez_fsa", url: "https://www.instagram.com/gustavo_gonzalez_fsa" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gggonzalez/'
       },
       {
@@ -412,6 +556,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Aguilares, Tucumán, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/elia-marina-fernandez.png',
+                socialMedia: {
+          instagram: { handle: "@eliamarinafernandez", url: "https://www.instagram.com/eliamarinafernandez" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/emfernandez/'
       },
       {
@@ -422,6 +569,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Banda del Río Salí, Tucumán, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/gladys-medina.png',
+                socialMedia: {
+          x: { handle: "@gladysmedina_ok", url: "https://x.com/gladysmedina_ok" },
+          instagram: { handle: "@gladysmedinaoficial", url: "https://www.instagram.com/gladysmedinaoficial" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gmedina/'
       },
       {
@@ -432,6 +583,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Tafí Viejo, Tucumán, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/javier-noguera.png',
+                socialMedia: {
+          x: { handle: "@javiernogueira", url: "https://x.com/javiernogueira" },
+          instagram: { handle: "@javiernogueraok", url: "https://www.instagram.com/javiernogueraok" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mnoguera/'
       },
       {
@@ -442,6 +597,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'San Juan, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/carlos-gustavo-jaime-quiroga.png',
+                socialMedia: {
+          facebook: { handle: "carlosgustavojaimequiroga", url: "https://www.facebook.com/carlosgustavojaimequiroga" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/cjaimeq/'
       },
       {
@@ -452,6 +610,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Rivadavia, San Juan, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/nancy-viviana-picon-martinez.png',
+                socialMedia: {
+          x: { handle: "@NancyPiconSJ", url: "https://x.com/NancyPiconSJ" },
+          instagram: { handle: "@nancypiconsj", url: "https://www.instagram.com/nancypiconsj" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/npiconm/'
       },
       {
@@ -462,6 +624,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Neuquén, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/karina-maureira.png',
+                socialMedia: {
+          instagram: { handle: "@karinamaureira_", url: "https://www.instagram.com/karinamaureira_" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/kmaureira/'
       }
     ]

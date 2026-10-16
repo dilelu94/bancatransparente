@@ -138,6 +138,53 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
                 </a>
               </p>
             )}
+
+            {deputy.socialMedia && Object.keys(deputy.socialMedia).length > 0 && (
+              <div className="pt-2 border-t border-slate-200/80 mt-2">
+                <span className="font-semibold text-slate-800 block mb-1.5">Redes Sociales Oficiales:</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  {deputy.socialMedia.x && (
+                    <a
+                      href={deputy.socialMedia.x.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black hover:bg-slate-800 text-white text-[11px] font-medium transition-colors shadow-xs"
+                      title={`X (Twitter): ${deputy.socialMedia.x.handle}`}
+                    >
+                      <span className="font-bold text-xs">𝕏</span>
+                      <span>{deputy.socialMedia.x.handle}</span>
+                      <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+                    </a>
+                  )}
+                  {deputy.socialMedia.instagram && (
+                    <a
+                      href={deputy.socialMedia.instagram.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:opacity-95 text-white text-[11px] font-medium transition-opacity shadow-xs"
+                      title={`Instagram: ${deputy.socialMedia.instagram.handle}`}
+                    >
+                      <span className="font-bold text-xs">📷</span>
+                      <span>{deputy.socialMedia.instagram.handle}</span>
+                      <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+                    </a>
+                  )}
+                  {deputy.socialMedia.facebook && (
+                    <a
+                      href={deputy.socialMedia.facebook.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-medium transition-colors shadow-xs"
+                      title={`Facebook: ${deputy.socialMedia.facebook.handle}`}
+                    >
+                      <span className="font-bold text-xs">f</span>
+                      <span>{deputy.socialMedia.facebook.handle}</span>
+                      <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Estimated Salary / Dieta Legislativa */}
