@@ -231,13 +231,12 @@ export const SESSIONS_DATA: Session[] = [
         id: 'guillermo-cesar-aguero',
         name: 'Guillermo César Agüero',
         party: 'UCR',
-        province: 'Córdoba',
-        locationName: 'Córdoba, Argentina',
+        province: 'Chaco',
+        locationName: 'Resistencia, Chaco, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/guillermo-cesar-aguero.png',
-                socialMedia: {
-          x: { handle: "@guilleaguero", url: "https://x.com/guilleaguero" },
-          instagram: { handle: "@guillermoaguero_", url: "https://www.instagram.com/guillermoaguero_" },
+        socialMedia: {
+          instagram: { handle: "@guilleaguero.chaco", url: "https://www.instagram.com/guilleaguero.chaco/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gcaguero/'
       },
