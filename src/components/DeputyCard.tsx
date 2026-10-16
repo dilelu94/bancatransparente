@@ -1,6 +1,7 @@
 import React from 'react';
 import { Deputy } from '../types';
-import { MapPin, UserX } from 'lucide-react';
+import { MapPin, UserX, Banknote } from 'lucide-react';
+import { getDeputySalary, formatCurrencyARS } from '../data/sessions';
 
 interface DeputyCardProps {
   deputy: Deputy;
@@ -93,6 +94,16 @@ export const DeputyCard: React.FC<DeputyCardProps> = ({ deputy, onClick }) => {
               className={`inline-block text-xs font-medium px-2.5 py-1 rounded-md border ${partyColor.bg} ${partyColor.text} ${partyColor.border}`}
             >
               {deputy.party}
+            </span>
+          </div>
+
+          <div className="mt-3 pt-3 border-t border-slate-100/80 flex items-center justify-between text-xs">
+            <span className="text-slate-500 flex items-center gap-1 font-medium">
+              <Banknote className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Dieta neta estimada:</span>
+            </span>
+            <span className="font-mono font-bold text-slate-800 bg-emerald-50 text-emerald-800 border border-emerald-200/60 px-1.5 py-0.5 rounded">
+              ~{formatCurrencyARS(getDeputySalary(deputy).net)}
             </span>
           </div>
         </div>

@@ -1,3 +1,15 @@
+
+// Estimación salarial oficial HCDN (2026):
+// Dieta bruta base: $6.650.000 (aprox. $5.300.000 neto de bolsillo)
+// Adicional por Desarraigo (+100 km de CABA): +$1.250.000 bruto (+$950.000 neto aprox.)
+export const SALARY_CONFIG = {
+  baseGross: 6650000,
+  baseNet: 5300000,
+  desarraigoGross: 1250000,
+  desarraigoNet: 950000,
+  sources: "Honorable Cámara de Diputados de la Nación (HCDN) - Liquidación paritaria APL / Dietas legislativas 2026"
+};
+
 import { Session } from '../types';
 
 export const SESSIONS_DATA: Session[] = [
@@ -455,3 +467,35 @@ export const SESSIONS_DATA: Session[] = [
     ]
   }
 ];
+
+export function getDeputySalary(deputy: { province: string; hasDesarraigo?: boolean; estimatedDietGross?: number; estimatedDietNet?: number }) {
+  // If explicitly overridden on the deputy object:
+  if (deputy.estimatedDietGross && deputy.estimatedDietNet) {
+    return {
+      gross: deputy.estimatedDietGross,
+      net: deputy.estimatedDietNet,
+      hasDesarraigo: !!deputy.hasDesarraigo
+    };
+  }
+
+  // By default, CABA legislators do not receive the desarraigo allowance (+100km rule)
+  const isCABA = deputy.province.toLowerCase().includes("ciudad autónoma") || deputy.province.toLowerCase().includes("caba");
+  const hasDesarraigo = deputy.hasDesarraigo !== undefined ? deputy.hasDesarraigo : !isCABA;
+
+  const gross = SALARY_CONFIG.baseGross + (hasDesarraigo ? SALARY_CONFIG.desarraigoGross : 0);
+  const net = SALARY_CONFIG.baseNet + (hasDesarraigo ? SALARY_CONFIG.desarraigoNet : 0);
+
+  return {
+    gross,
+    net,
+    hasDesarraigo
+  };
+}
+
+export function formatCurrencyARS(amount: number): string {
+  return new Intl.NumberFormat("es-AR", {
+    style: "currency",
+    currency: "ARS",
+    maximumFractionDigits: 0
+  }).format(amount);
+}

@@ -12,6 +12,9 @@ export interface Deputy {
   profileUrl?: string;
   cuit?: string;
   dni?: string;
+  estimatedDietGross?: number;
+  estimatedDietNet?: number;
+  hasDesarraigo?: boolean;
 }
 
 export interface Session {
