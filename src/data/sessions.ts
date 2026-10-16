@@ -304,9 +304,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Mendoza, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/pamela-fernanda-verasay.png',
-                socialMedia: {
+        socialMedia: {
           x: { handle: "@PameVerasay", url: "https://x.com/PameVerasay" },
-          instagram: { handle: "@pamelaverasay", url: "https://www.instagram.com/pamelaverasay" },
+          instagram: { handle: "@pamela.verasay", url: "https://www.instagram.com/pamela.verasay/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/pverasay/'
       },
