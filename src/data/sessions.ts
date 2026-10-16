@@ -332,9 +332,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/oscar-zago.png',
-                socialMedia: {
+        socialMedia: {
           x: { handle: "@OscarZagoOK", url: "https://x.com/OscarZagoOK" },
-          instagram: { handle: "@oscarzagooficial", url: "https://www.instagram.com/oscarzagooficial" },
+          instagram: { handle: "@dipzago", url: "https://www.instagram.com/dipzago/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ozago/'
       },
