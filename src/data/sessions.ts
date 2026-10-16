@@ -374,8 +374,8 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Comodoro Rivadavia, Chubut, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/jorge-antonio-avila.png',
-                socialMedia: {
-          facebook: { handle: "jorgelomaavila", url: "https://www.facebook.com/jorgelomaavila" },
+        socialMedia: {
+          facebook: { handle: "Jorge Ávila Diputado Nacional", url: "https://www.facebook.com/p/Jorge-%C3%81vila-Diputado-Nacional-61560928422265/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jaavila/'
       },
