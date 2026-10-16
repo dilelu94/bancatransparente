@@ -18,7 +18,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Unión por la Patria',
         province: 'Santiago del Estero',
         locationName: 'Santiago del Estero, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/estela-mary-neder.png'
       },
       {
         id: 'paulo-agustin-tita',
@@ -35,7 +36,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Buenos Aires',
         locationName: 'La Plata, Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/maria-florencia-de-sensi.png'
       },
       {
         id: 'alejandro-finocchiaro',
@@ -43,7 +45,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Buenos Aires',
         locationName: 'La Matanza, Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/alejandro-finocchiaro.png'
       },
       {
         id: 'cristian-a-ritondo',
@@ -51,7 +54,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Buenos Aires',
         locationName: 'Avellaneda, Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/cristian-a-ritondo.png'
       },
       {
         id: 'javier-sanchez-wrba',
@@ -59,7 +63,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Buenos Aires',
         locationName: 'Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/javier-sanchez-wrba.png'
       },
       {
         id: 'martin-yeza',
@@ -67,7 +72,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Buenos Aires',
         locationName: 'Pinamar, Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/martin-yeza.png'
       },
       {
         id: 'fernando-de-andreis',
@@ -75,7 +81,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Ciudad Autónoma de Buenos Aires',
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/fernando-de-andreis.png'
       },
       {
         id: 'daiana-fernandez-molero',
@@ -83,7 +90,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Ciudad Autónoma de Buenos Aires',
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/daiana-fernandez-molero.png'
       },
       {
         id: 'antonela-giampieri',
@@ -91,7 +99,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Ciudad Autónoma de Buenos Aires',
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/antonela-giampieri.png'
       },
       {
         id: 'alvaro-gonzalez',
@@ -99,7 +108,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Ciudad Autónoma de Buenos Aires',
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/alvaro-gonzalez.png'
       },
       {
         id: 'alicia-fregonese',
@@ -107,7 +117,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Entre Ríos',
         locationName: 'Paraná, Entre Ríos, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/alicia-fregonese.png'
       },
       {
         id: 'martin-ardohain',
@@ -115,7 +126,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'La Pampa',
         locationName: 'Santa Rosa, La Pampa, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/martin-ardohain.png'
       },
       {
         id: 'emmanuel-bianchetti',
@@ -123,7 +135,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'PRO',
         province: 'Misiones',
         locationName: 'Posadas, Misiones, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/emmanuel-bianchetti.png'
       },
       {
         id: 'guillermo-cesar-aguero',
@@ -131,7 +144,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'UCR',
         province: 'Córdoba',
         locationName: 'Córdoba, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/guillermo-cesar-aguero.png'
       },
       {
         id: 'gerardo-cipolini',
@@ -139,7 +153,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'UCR',
         province: 'Chaco',
         locationName: 'Resistencia, Chaco, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/gerardo-cipolini.png'
       },
       {
         id: 'diogenes-ignacio-gonzalez',
@@ -147,7 +162,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'UCR',
         province: 'Corrientes',
         locationName: 'Corrientes, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/diogenes-ignacio-gonzalez.png'
       },
       {
         id: 'dario-schneider',
@@ -155,7 +171,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'UCR',
         province: 'Entre Ríos',
         locationName: 'Crespo, Entre Ríos, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/dario-schneider.png'
       },
       {
         id: 'lisandro-nieri',
@@ -163,7 +180,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'UCR',
         province: 'Mendoza',
         locationName: 'Mendoza, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/lisandro-nieri.png'
       },
       {
         id: 'pamela-fernanda-verasay',
@@ -171,7 +189,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'UCR',
         province: 'Mendoza',
         locationName: 'Mendoza, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/pamela-fernanda-verasay.png'
       },
       {
         id: 'eduardo-falcone',
@@ -179,7 +198,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'MID',
         province: 'Buenos Aires',
         locationName: 'Chivilcoy, Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/eduardo-falcone.png'
       },
       {
         id: 'oscar-zago',
@@ -187,7 +207,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'MID',
         province: 'Ciudad Autónoma de Buenos Aires',
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/oscar-zago.png'
       },
       {
         id: 'karina-banfi',
@@ -195,7 +216,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Adelante Buenos Aires',
         province: 'Buenos Aires',
         locationName: 'Buenos Aires, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/karina-banfi.png'
       },
       {
         id: 'jose-luis-garrido',
@@ -203,7 +225,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Por Santa Cruz',
         province: 'Santa Cruz',
         locationName: 'Río Gallegos, Santa Cruz, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/jose-luis-garrido.png'
       },
       {
         id: 'jorge-antonio-avila',
@@ -211,7 +234,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Provincias Unidas',
         province: 'Chubut',
         locationName: 'Comodoro Rivadavia, Chubut, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/jorge-antonio-avila.png'
       },
       {
         id: 'alejandra-torres',
@@ -219,7 +243,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Provincias Unidas',
         province: 'Córdoba',
         locationName: 'Córdoba, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/alejandra-torres.png'
       },
       {
         id: 'jorge-rizzotti',
@@ -227,7 +252,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Provincias Unidas',
         province: 'Jujuy',
         locationName: 'San Salvador de Jujuy, Jujuy, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/jorge-rizzotti.png'
       },
       {
         id: 'maria-ines-zigaran',
@@ -235,7 +261,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Provincias Unidas',
         province: 'Jujuy',
         locationName: 'San Salvador de Jujuy, Jujuy, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/maria-ines-zigaran.png'
       },
       {
         id: 'lourdes-micaela-arrieta',
@@ -243,7 +270,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Provincias Unidas',
         province: 'Mendoza',
         locationName: 'Mendoza, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/lourdes-micaela-arrieta.png'
       },
       {
         id: 'sergio-eduardo-capozzi',
@@ -251,7 +279,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Provincias Unidas',
         province: 'Río Negro',
         locationName: 'Bariloche, Río Negro, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/sergio-eduardo-capozzi.png'
       },
       {
         id: 'jose-nunez',
@@ -259,7 +288,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Provincias Unidas',
         province: 'Santa Fe',
         locationName: 'Rosario, Santa Fe, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/jose-nunez.png'
       },
       {
         id: 'gisela-scaglia',
@@ -267,7 +297,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Provincias Unidas',
         province: 'Santa Fe',
         locationName: 'Gálvez, Santa Fe, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/gisela-scaglia.png'
       },
       {
         id: 'bernardo-biella',
@@ -275,7 +306,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Innovación Federal',
         province: 'Salta',
         locationName: 'Salta, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/bernardo-biella.png'
       },
       {
         id: 'pablo-outes',
@@ -283,7 +315,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Innovación Federal',
         province: 'Salta',
         locationName: 'Salta, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/pablo-outes.png'
       },
       {
         id: 'yolanda-vega',
@@ -291,7 +324,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Innovación Federal',
         province: 'Salta',
         locationName: 'Cerrillos, Salta, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/yolanda-vega.png'
       },
       {
         id: 'claudio-alvarez',
@@ -299,7 +333,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Innovación Federal',
         province: 'Misiones',
         locationName: 'Posadas, Misiones, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/claudio-alvarez.png'
       },
       {
         id: 'gerardo-gustavo-gonzalez',
@@ -307,7 +342,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Innovación Federal',
         province: 'Misiones',
         locationName: 'Posadas, Misiones, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/gerardo-gustavo-gonzalez.png'
       },
       {
         id: 'elia-marina-fernandez',
@@ -315,7 +351,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Independencia',
         province: 'Tucumán',
         locationName: 'Aguilares, Tucumán, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/elia-marina-fernandez.png'
       },
       {
         id: 'gladys-medina',
@@ -323,7 +360,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Independencia',
         province: 'Tucumán',
         locationName: 'Banda del Río Salí, Tucumán, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/gladys-medina.png'
       },
       {
         id: 'javier-noguera',
@@ -331,7 +369,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Independencia',
         province: 'Tucumán',
         locationName: 'Tafí Viejo, Tucumán, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/javier-noguera.png'
       },
       {
         id: 'carlos-gustavo-jaime-quiroga',
@@ -339,7 +378,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Producción y Trabajo',
         province: 'San Juan',
         locationName: 'San Juan, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/carlos-gustavo-jaime-quiroga.png'
       },
       {
         id: 'nancy-viviana-picon-martinez',
@@ -347,7 +387,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'Producción y Trabajo',
         province: 'San Juan',
         locationName: 'Rivadavia, San Juan, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/nancy-viviana-picon-martinez.png'
       },
       {
         id: 'karina-maureira',
@@ -355,7 +396,8 @@ export const SESSIONS_DATA: Session[] = [
         party: 'La Neuquinidad',
         province: 'Neuquén',
         locationName: 'Neuquén, Argentina',
-        status: 'ausente'
+        status: 'ausente',
+        imageUrl: '/deputies/karina-maureira.png'
       }
     ]
   }
