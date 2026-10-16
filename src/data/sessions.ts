@@ -180,6 +180,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/alvaro-gonzalez.png',
+        socialMedia: {
+          instagram: { handle: "@alvarog.gonzalez", url: "https://www.instagram.com/alvarog.gonzalez/" },
+        },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/agonzalez/'
       },
       {
