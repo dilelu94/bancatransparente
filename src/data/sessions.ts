@@ -43,10 +43,14 @@ export const SESSIONS_DATA: Session[] = [
         name: 'María Florencia De Sensi',
         party: 'PRO',
         province: 'Buenos Aires',
-        locationName: 'La Plata, Buenos Aires, Argentina',
+        locationName: 'Lisandro de la Torre 550, Comuna 9, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Lisandro de la Torre 550, Comuna 9, CABA (CP 1408)',
+        addressSource: 'https://w20argentina.com/empresa/de-sensi-maria-florencia-27332948895',
         status: 'ausente',
         imageUrl: '/deputies/maria-florencia-de-sensi.png',
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/mdesensi/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/mdesensi/',
+        cuit: '27-33294889-5',
+        dni: '33.294.889'
       },
       {
         id: 'alejandro-finocchiaro',
