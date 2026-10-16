@@ -99,13 +99,35 @@ bancatransparente/
 
 ## 🤝 Cómo Contribuir
 
-Las contribuciones son bienvenidas:
-1. Haz un fork del repositorio.
-2. Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-sesion`).
-3. Asegúrate de que las pruebas pasen (`npm test` y `npm run build`).
-4. Realiza tu commit (`git commit -m 'feat: incorporar sesión del 22/10'`).
-5. Haz push a la rama (`git push origin feature/nueva-sesion`).
-6. Abre un Pull Request describiendo los cambios.
+¡Todas las contribuciones de la comunidad son bienvenidas! No necesitas ser programador ni saber usar Git para colaborar.
+
+### 📝 Forma más sencilla: Crear un Issue (Reporte público)
+
+Si conoces el CUIT, DNI, domicilio fiscal o redes sociales de algún diputado que aún no esté cargado:
+
+1. Ve a la pestaña [**Issues**](https://github.com/dilelu94/bancatransparente/issues) de este repositorio o haz clic directamente en el botón **"Aportar domicilio (Crear Issue)"** dentro de la ficha del legislador en la web [bancatransparente.duckdns.org](https://bancatransparente.duckdns.org).
+2. Haz clic en el botón verde **"New issue"** (Nuevo issue).
+3. Completa los datos en la plantilla:
+   - **Nombre del legislador**
+   - **CUIT / DNI**
+   - **Domicilio fiscal o sede distrital**
+   - **Enlace de la fuente pública** (AFIP, Boletín Oficial, registros comerciales o publicaciones oficiales).
+4. Haz clic en **"Submit new issue"**.
+5. Un administrador revisará la fuente aportada y la incorporará a la base de datos de la plataforma.
+
+---
+
+### 💻 Para desarrolladores: Enviar un Pull Request (PR)
+
+Si deseas modificar código, agregar estilos o nuevas sesiones legislativas:
+1. Haz un **Fork** de este repositorio.
+2. Crea tu rama de trabajo (`git checkout -b feature/nueva-sesion`).
+3. Realiza tus modificaciones y verifica que pasen los tests:
+   ```bash
+   npm test && npm run build
+   ```
+4. Haz commit y push a tu fork (`git push origin feature/nueva-sesion`).
+5. Abre un **Pull Request** explicando las mejoras o datos incorporados.
 
 ---
 
