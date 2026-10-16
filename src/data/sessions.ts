@@ -32,7 +32,9 @@ export const SESSIONS_DATA: Session[] = [
         addressSource: 'https://w20argentina.com/empresa/tita-paulo-agustin-20250816031',
         status: 'ausente',
         imageUrl: '/deputies/paulo-agustin-tita.png',
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/ptita/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/ptita/',
+        cuit: '20-25081603-1',
+        dni: '25.081.603'
       },
       {
         id: 'maria-florencia-de-sensi',

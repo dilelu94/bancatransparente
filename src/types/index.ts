@@ -10,6 +10,8 @@ export interface Deputy {
   role?: string;
   imageUrl?: string;
   profileUrl?: string;
+  cuit?: string;
+  dni?: string;
 }
 
 export interface Session {

@@ -28,12 +28,14 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
   const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}&sourceid=chrome&ie=UTF-8&source=chrome.ctxt`;
   
   // Pre-filled GitHub issue URL to make contributing address and sources effortless
-  const issueTitle = encodeURIComponent(`Aporte de domicilio: ${deputy.name}`);
+  const issueTitle = encodeURIComponent(`Aporte de domicilio / CUIT: ${deputy.name}`);
   const issueBody = encodeURIComponent(
     `### Legislador: ${deputy.name}\n` +
     `**Bloque:** ${deputy.party}\n` +
     `**Provincia:** ${deputy.province}\n\n` +
     `---\n\n` +
+    `### CUIT / DNI:\n` +
+    `<!-- CUIT y/o DNI verificado en registros públicos -->\n\n\n` +
     `### Domicilio propuesto:\n` +
     `<!-- Calle, número, localidad, provincia, código postal -->\n\n\n` +
     `### Fuentes y enlaces de verificación pública:\n` +
@@ -109,6 +111,16 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
               <strong>Distrito Electoral:</strong> {deputy.province}
             </p>
             <p>
+              <strong>CUIT / DNI:</strong>{' '}
+              {deputy.cuit ? (
+                <span className="font-mono font-medium text-slate-900 bg-slate-200/80 px-2 py-0.5 rounded border border-slate-300">
+                  {deputy.cuit} {deputy.dni ? `(DNI: ${deputy.dni})` : ''}
+                </span>
+              ) : (
+                <span className="text-slate-400 italic">No registrado aún</span>
+              )}
+            </p>
+            <p>
               <strong>Actividad en Recinto:</strong> Figura entre los legisladores ausentes que impidieron alcanzar el quórum de 129 diputados en la sesión especial convocada para rechazar el DNU 70/2023 y tratar el financiamiento universitario.
             </p>
             {deputy.profileUrl && (
@@ -138,6 +150,14 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
                 <p className="text-sm font-semibold text-slate-900">
                   {deputy.address}
                 </p>
+                {deputy.cuit && (
+                  <p className="text-slate-600">
+                    <strong>Identificación fiscal:</strong>{' '}
+                    <span className="font-mono font-medium text-slate-900 bg-white px-1.5 py-0.5 rounded border border-sky-200">
+                      CUIT {deputy.cuit}
+                    </span>
+                  </p>
+                )}
                 {deputy.addressSource && (
                   <p className="text-slate-500 pt-0.5">
                     Fuente pública:{' '}
