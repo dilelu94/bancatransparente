@@ -85,7 +85,7 @@ export const SESSIONS_DATA: Session[] = [
         imageUrl: '/deputies/alejandro-finocchiaro.png',
                 socialMedia: {
           x: { handle: "@alefinocchiaro", url: "https://x.com/alefinocchiaro" },
-          instagram: { handle: "@alefinocchiaro", url: "https://www.instagram.com/alefinocchiaro" },
+          facebook: { handle: "AlejandroFinocchiaroOK", url: "https://www.facebook.com/AlejandroFinocchiaroOK" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/afinocchiaro/'
       },
