@@ -414,9 +414,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'San Salvador de Jujuy, Jujuy, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/maria-ines-zigaran.png',
-                socialMedia: {
-          x: { handle: "@InesZigaran", url: "https://x.com/InesZigaran" },
-          instagram: { handle: "@ineszigaran", url: "https://www.instagram.com/ineszigaran" },
+        socialMedia: {
+          instagram: { handle: "@mariaineszigaranok", url: "https://www.instagram.com/mariaineszigaranok/" },
+          facebook: { handle: "mariaineszigaranok", url: "https://www.facebook.com/mariaineszigaranok/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mzigaran/'
       },
