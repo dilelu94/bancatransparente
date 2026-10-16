@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Deputy } from '../types';
-import { X, Search, MapPin, ShieldCheck, Building2, ExternalLink } from 'lucide-react';
+import { X, Search, MapPin, Building2, ExternalLink, Home, GitPullRequest } from 'lucide-react';
 
 interface DeputyModalProps {
   deputy: Deputy | null;
@@ -27,8 +27,10 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
   const searchQuery = encodeURIComponent(`${deputy.name} (${deputy.party})`);
   const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}&sourceid=chrome&ie=UTF-8&source=chrome.ctxt`;
   
-  // Safe embedded Google Map focused on the deputy's constituency / province district seat
-  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(deputy.locationName || deputy.province + ', Argentina')}&t=&z=12&ie=UTF8&iwloc=&output=embed`;
+  // Embedded Google Map only when address is available
+  const mapEmbedUrl = deputy.address
+    ? `https://maps.google.com/maps?q=${encodeURIComponent(deputy.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+    : null;
 
   return (
     <div
@@ -111,35 +113,81 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
             )}
           </div>
 
-          {/* Privacy & Safety Note */}
-          <div className="bg-amber-50/70 border border-amber-200 rounded-xl p-3 text-xs text-amber-900 flex items-start gap-2.5">
-            <ShieldCheck className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-            <p className="leading-relaxed">
-              <strong>Aviso de Privacidad y Función Pública:</strong> En cumplimiento de normativas de protección de datos personales y seguridad preventiva (políticas anti-doxxing), este portal no divulga domicilios residenciales privados. El mapa refleja la cabecera distrital y sede de representación institucional ante el pueblo soberano.
-            </p>
-          </div>
+          {/* Address and Map or PR Callout */}
+          {deputy.address && mapEmbedUrl ? (
+            <div className="space-y-4">
+              <div className="bg-sky-50/80 border border-sky-200 rounded-xl p-4 text-xs text-slate-700 space-y-1.5">
+                <div className="flex items-center gap-2 font-semibold text-sky-950">
+                  <Home className="w-4 h-4 text-sky-700" />
+                  <span>Domicilio Registrado</span>
+                </div>
+                <p className="text-sm font-semibold text-slate-900">
+                  {deputy.address}
+                </p>
+                {deputy.addressSource && (
+                  <p className="text-slate-500 pt-0.5">
+                    Fuente pública:{' '}
+                    <a
+                      href={deputy.addressSource}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sky-600 hover:text-sky-800 underline inline-flex items-center gap-1 font-medium"
+                    >
+                      <span>Registro comercial / fiscal AFIP</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </p>
+                )}
+              </div>
 
-          {/* Google Map of Electoral District / Province */}
-          <div>
-            <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
-              <MapPin className="w-4 h-4 text-sky-600" />
-              <span>Jurisdicción y Distrito: {deputy.locationName}</span>
+              <div>
+                <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                  <MapPin className="w-4 h-4 text-sky-600" />
+                  <span>Ubicación: {deputy.address}</span>
+                </div>
+                <div className="w-full h-64 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-inner">
+                  <iframe
+                    title={`Mapa de ubicación de ${deputy.name}`}
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    scrolling="no"
+                    marginHeight={0}
+                    marginWidth={0}
+                    src={mapEmbedUrl}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </div>
             </div>
-            <div className="w-full h-64 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-inner">
-              <iframe
-                title={`Mapa del distrito de ${deputy.name}`}
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                scrolling="no"
-                marginHeight={0}
-                marginWidth={0}
-                src={mapEmbedUrl}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+          ) : (
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 text-center text-amber-900 space-y-3">
+              <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto text-amber-700 shadow-inner">
+                <Home className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-bold text-base text-amber-950">
+                  Domicilio aún no registrado
+                </h4>
+                <p className="text-xs text-amber-800 max-w-md mx-auto leading-relaxed">
+                  Actualmente no contamos con el domicilio público o fiscal verificado de este legislador en la base de datos comunitaria.
+                </p>
+              </div>
+              <div className="pt-2">
+                <a
+                  href="https://github.com/dilelu94/bancatransparente"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow-sm hover:shadow transition-all"
+                >
+                  <GitPullRequest className="w-4 h-4 text-sky-400" />
+                  <span>Aportar domicilio con un Pull Request en GitHub</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                </a>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Modal Footer */}

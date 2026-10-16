@@ -4,6 +4,8 @@ export interface Deputy {
   party: string;
   province: string;
   locationName: string;
+  address?: string;
+  addressSource?: string;
   status: 'ausente' | 'presente';
   role?: string;
   imageUrl?: string;

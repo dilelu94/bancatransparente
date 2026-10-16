@@ -27,7 +27,9 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Paulo Agustín Tita',
         party: 'Unión por la Patria',
         province: 'Tierra del Fuego',
-        locationName: 'Ushuaia, Tierra del Fuego, Argentina',
+        locationName: 'Los Calafates 981, Río Grande, Tierra del Fuego, Argentina',
+        address: 'Los Calafates 981, Río Grande, Tierra del Fuego (CP 9420)',
+        addressSource: 'https://w20argentina.com/empresa/tita-paulo-agustin-20250816031',
         status: 'ausente',
         imageUrl: '/deputies/paulo-agustin-tita.png',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ptita/'
