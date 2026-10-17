@@ -1,3 +1,8 @@
+export interface AddressSource {
+  label: string;
+  url: string;
+}
+
 export interface Deputy {
   id: string;
   name: string;
@@ -6,6 +11,8 @@ export interface Deputy {
   locationName: string;
   address?: string;
   addressSource?: string;
+  addressSources?: AddressSource[];
+  addressNotes?: string;
   status: 'ausente' | 'presente';
   role?: string;
   imageUrl?: string;

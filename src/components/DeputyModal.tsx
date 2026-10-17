@@ -261,7 +261,35 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
                     </span>
                   </p>
                 )}
-                {deputy.addressSource && (
+                {deputy.addressNotes && (
+                  <p className="text-slate-700 bg-white/90 p-2.5 rounded-lg border border-sky-200 text-xs leading-relaxed">
+                    <strong className="text-slate-900 font-semibold">Nota:</strong> {deputy.addressNotes}
+                  </p>
+                )}
+
+                {deputy.addressSources && deputy.addressSources.length > 0 ? (
+                  <div className="text-slate-600 pt-1 space-y-1.5">
+                    <span className="font-semibold text-slate-800 block text-xs">
+                      {deputy.addressSources.length > 1 ? 'Fuentes públicas verificadas:' : 'Fuente pública verificada:'}
+                    </span>
+                    <ul className="space-y-1">
+                      {deputy.addressSources.map((source, idx) => (
+                        <li key={idx} className="flex items-start gap-1.5">
+                          <span className="text-sky-600 font-bold select-none">•</span>
+                          <a
+                            href={source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sky-600 hover:text-sky-800 underline inline-flex items-center gap-1 font-medium text-xs break-all"
+                          >
+                            <span>{source.label}</span>
+                            <ExternalLink className="w-3 h-3 flex-shrink-0" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : deputy.addressSource ? (
                   <p className="text-slate-500 pt-0.5">
                     Fuente pública:{' '}
                     <a
@@ -274,7 +302,7 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </p>
-                )}
+                ) : null}
               </div>
 
               <div>

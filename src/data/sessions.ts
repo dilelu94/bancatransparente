@@ -608,7 +608,21 @@ export const SESSIONS_DATA: Session[] = [
         province: 'San Juan',
         locationName: 'Av. San Martín Este 478, San Juan, Argentina',
         address: 'Av. San Martín Este 478 PA, San Juan (CP 5400)',
-        addressSource: 'https://indicadores.ar/declaraciones-juradas/picon-martinez-nancy-viviana-27251183207',
+        addressNotes: 'Domicilio y línea telefónica registrados a nombre de su cónyuge, Ricardo Moine.',
+        addressSources: [
+          {
+            label: 'Declaración Jurada Patrimonial Integral (Indicadores.ar)',
+            url: 'https://indicadores.ar/declaraciones-juradas/picon-martinez-nancy-viviana-27251183207'
+          },
+          {
+            label: 'Guía telefónica comercial (ABC Teléfonos - Av. San Martín E 478 PA, Ricardo Moine)',
+            url: 'https://www.abctelefonos.com/direccion_argentina/san_juan/san_juan/av_s_martin_e_478_pa'
+          },
+          {
+            label: 'Vínculo conyugal público verificado (Publicación oficial en Instagram)',
+            url: 'https://www.instagram.com/p/Db7BbcpDqY7/'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/nancy-viviana-picon-martinez.png',
         socialMedia: {
@@ -626,7 +640,16 @@ export const SESSIONS_DATA: Session[] = [
         province: 'Neuquén',
         locationName: 'Urquiza 1643, General Roca, Río Negro, Argentina',
         address: 'Urquiza 1643, General Roca, Río Negro',
-        addressSource: 'https://indicadores.ar/declaraciones-juradas/maureira-karina-alejandra-23221392094',
+        addressSources: [
+          {
+            label: 'Declaración Jurada Patrimonial - Inmueble casa habitación General Roca (Indicadores.ar)',
+            url: 'https://indicadores.ar/declaraciones-juradas/maureira-karina-alejandra-23221392094'
+          },
+          {
+            label: 'Guía telefónica comercial (ABC Teléfonos - Urquiza 1643, General Roca)',
+            url: 'https://www.abctelefonos.com/direccion_argentina/rio_negro/general_roca_-_neuquen/urquiza_1643'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/karina-maureira.png',
         socialMedia: {
