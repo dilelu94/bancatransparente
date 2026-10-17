@@ -6,9 +6,15 @@ interface VisitorModalProps {
   isOpen: boolean;
   onClose: () => void;
   stats: CountryVisitorStat[];
+  isLoading?: boolean;
 }
 
-export const VisitorModal: React.FC<VisitorModalProps> = ({ isOpen, onClose, stats }) => {
+export const VisitorModal: React.FC<VisitorModalProps> = ({
+  isOpen,
+  onClose,
+  stats,
+  isLoading = false,
+}) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -59,7 +65,7 @@ export const VisitorModal: React.FC<VisitorModalProps> = ({ isOpen, onClose, sta
                   <strong className="text-slate-700 font-semibold">
                     {totalVisitors.toLocaleString('es-AR')}
                   </strong>{' '}
-                  visitas registradas
+                  {totalVisitors === 1 ? 'visita registrada' : 'visitas registradas'}
                 </span>
               </p>
             </div>
@@ -75,49 +81,69 @@ export const VisitorModal: React.FC<VisitorModalProps> = ({ isOpen, onClose, sta
 
         {/* Countries List */}
         <div className="p-4 overflow-y-auto flex-1 divide-y divide-slate-100">
-          {stats.map((country, index) => {
-            const percentage = ((country.visitors / maxVisitors) * 100).toFixed(0);
-            return (
-              <div
-                key={country.code}
-                className="py-3 px-2 flex items-center justify-between gap-3 hover:bg-slate-50/80 rounded-lg transition-colors"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <span className="text-xs font-semibold text-slate-400 w-5 text-right flex-shrink-0">
-                    {index + 1}
-                  </span>
-                  <span className="text-2xl flex-shrink-0 select-none leading-none" role="img" aria-label={country.name}>
-                    {country.flag}
-                  </span>
-                  <div className="min-w-0">
-                    <p className="font-medium text-slate-800 text-sm truncate">
-                      {country.name}
-                    </p>
-                    {/* Visual bar */}
-                    <div className="w-24 sm:w-36 bg-slate-100 h-1.5 rounded-full mt-1.5 overflow-hidden">
-                      <div
-                        className="bg-sky-500 h-full rounded-full"
-                        style={{ width: `${percentage}%` }}
-                      />
+          {isLoading ? (
+            <div className="py-12 text-center text-slate-400 text-xs">
+              Cargando registros en tiempo real...
+            </div>
+          ) : stats.length === 0 ? (
+            <div className="py-12 text-center text-slate-500 text-sm">
+              <Globe className="w-10 h-10 text-slate-300 mx-auto mb-2" />
+              <p className="font-medium text-slate-700">Aún no hay visitas registradas</p>
+              <p className="text-xs text-slate-400 mt-1">
+                Las visitas reales de cada país se irán sumando automáticamente aquí.
+              </p>
+            </div>
+          ) : (
+            stats.map((country, index) => {
+              const percentage = ((country.visitors / maxVisitors) * 100).toFixed(0);
+              return (
+                <div
+                  key={country.code}
+                  className="py-3 px-2 flex items-center justify-between gap-3 hover:bg-slate-50/80 rounded-lg transition-colors"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="text-xs font-semibold text-slate-400 w-5 text-right flex-shrink-0">
+                      {index + 1}
+                    </span>
+                    <span
+                      className="text-2xl flex-shrink-0 select-none leading-none"
+                      role="img"
+                      aria-label={country.name}
+                    >
+                      {country.flag}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-medium text-slate-800 text-sm truncate">
+                        {country.name}
+                      </p>
+                      {/* Visual bar */}
+                      <div className="w-24 sm:w-36 bg-slate-100 h-1.5 rounded-full mt-1.5 overflow-hidden">
+                        <div
+                          className="bg-sky-500 h-full rounded-full"
+                          style={{ width: `${percentage}%` }}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="text-right flex-shrink-0 pl-2">
-                  <span className="text-sm font-bold text-slate-800">
-                    {country.visitors.toLocaleString('es-AR')}
-                  </span>
-                  <p className="text-[11px] text-slate-400">visitantes</p>
+                  <div className="text-right flex-shrink-0 pl-2">
+                    <span className="text-sm font-bold text-slate-800">
+                      {country.visitors.toLocaleString('es-AR')}
+                    </span>
+                    <p className="text-[11px] text-slate-400">
+                      {country.visitors === 1 ? 'visitante' : 'visitantes'}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+          )}
         </div>
 
         {/* Footer */}
         <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
           <span className="text-[11px] text-slate-400">
-            Actualización por geolocalización
+            Conteo en vivo y compartido por país
           </span>
           <button
             onClick={onClose}

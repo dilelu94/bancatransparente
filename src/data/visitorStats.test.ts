@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import {
-  INITIAL_VISITOR_STATS,
   getFlagEmoji,
   getCountryName,
+  parseRawStatsToCountryStats,
   getStoredVisitorStats,
 } from './visitorStats';
 
@@ -20,20 +20,30 @@ describe('visitorStats', () => {
     expect(getCountryName('US')).toBe('Estados Unidos');
   });
 
-  it('should provide default initial visitor stats with Argentina as leader', () => {
-    const stats = getStoredVisitorStats();
-    expect(stats.length).toBeGreaterThan(0);
+  it('should parse raw cloud stats object into sorted CountryVisitorStat array', () => {
+    const raw = {
+      AR: 10,
+      UY: 3,
+      ES: 5,
+      invalid: -1,
+      xyz123: 'abc',
+    };
+
+    const stats = parseRawStatsToCountryStats(raw);
+    expect(stats.length).toBe(3);
     expect(stats[0].code).toBe('AR');
+    expect(stats[0].visitors).toBe(10);
     expect(stats[0].flag).toBe('🇦🇷');
-    expect(stats[0].visitors).toBeGreaterThan(1000);
+
+    expect(stats[1].code).toBe('ES');
+    expect(stats[1].visitors).toBe(5);
+
+    expect(stats[2].code).toBe('UY');
+    expect(stats[2].visitors).toBe(3);
   });
 
-  it('should verify all default countries have a flag and valid visitor count', () => {
-    INITIAL_VISITOR_STATS.forEach((country) => {
-      expect(country.code).toMatch(/^[A-Z]{2}$/);
-      expect(country.name).toBeTruthy();
-      expect(country.flag).toBeTruthy();
-      expect(country.visitors).toBeGreaterThan(0);
-    });
+  it('should return empty array by default when no stats are stored yet', () => {
+    const stats = getStoredVisitorStats();
+    expect(Array.isArray(stats)).toBe(true);
   });
 });

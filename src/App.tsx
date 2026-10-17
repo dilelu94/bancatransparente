@@ -12,12 +12,14 @@ import {
   CountryVisitorStat,
   getStoredVisitorStats,
   recordVisitAndGetStats,
+  fetchLiveVisitorStats,
 } from './data/visitorStats';
 
 export function App() {
   const [selectedSessionId, setSelectedSessionId] = useState<string>(SESSIONS_DATA[0].id);
   const [selectedDeputy, setSelectedDeputy] = useState<Deputy | null>(null);
   const [isVisitorModalOpen, setIsVisitorModalOpen] = useState<boolean>(false);
+  const [isVisitorLoading, setIsVisitorLoading] = useState<boolean>(false);
   const [visitorStats, setVisitorStats] = useState<CountryVisitorStat[]>(() => getStoredVisitorStats());
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedParty, setSelectedParty] = useState<string>('');
@@ -28,6 +30,15 @@ export function App() {
       setVisitorStats(stats);
     });
   }, []);
+
+  const handleOpenVisitorStats = () => {
+    setIsVisitorModalOpen(true);
+    setIsVisitorLoading(true);
+    fetchLiveVisitorStats().then((stats) => {
+      setVisitorStats(stats);
+      setIsVisitorLoading(false);
+    });
+  };
 
   const currentSession = useMemo(() => {
     return SESSIONS_DATA.find((s) => s.id === selectedSessionId) || SESSIONS_DATA[0];
@@ -120,7 +131,7 @@ export function App() {
         )}
       </main>
 
-      <Footer onOpenVisitorStats={() => setIsVisitorModalOpen(true)} />
+      <Footer onOpenVisitorStats={handleOpenVisitorStats} />
 
       {/* Deputy Modal */}
       <DeputyModal
@@ -133,6 +144,7 @@ export function App() {
         isOpen={isVisitorModalOpen}
         onClose={() => setIsVisitorModalOpen(false)}
         stats={visitorStats}
+        isLoading={isVisitorLoading}
       />
     </div>
   );

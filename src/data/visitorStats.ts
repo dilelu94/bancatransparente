@@ -5,27 +5,8 @@ export interface CountryVisitorStat {
   visitors: number;
 }
 
-export const INITIAL_VISITOR_STATS: CountryVisitorStat[] = [
-  { code: 'AR', name: 'Argentina', flag: '🇦🇷', visitors: 18423 },
-  { code: 'UY', name: 'Uruguay', flag: '🇺🇾', visitors: 1245 },
-  { code: 'CL', name: 'Chile', flag: '🇨🇱', visitors: 892 },
-  { code: 'BR', name: 'Brasil', flag: '🇧🇷', visitors: 734 },
-  { code: 'ES', name: 'España', flag: '🇪🇸', visitors: 689 },
-  { code: 'US', name: 'Estados Unidos', flag: '🇺🇸', visitors: 541 },
-  { code: 'PY', name: 'Paraguay', flag: '🇵🇾', visitors: 418 },
-  { code: 'BO', name: 'Bolivia', flag: '🇧🇴', visitors: 362 },
-  { code: 'MX', name: 'México', flag: '🇲🇽', visitors: 295 },
-  { code: 'IT', name: 'Italia', flag: '🇮🇹', visitors: 214 },
-  { code: 'DE', name: 'Alemania', flag: '🇩🇪', visitors: 148 },
-  { code: 'CA', name: 'Canadá', flag: '🇨🇦', visitors: 115 },
-  { code: 'FR', name: 'Francia', flag: '🇫🇷', visitors: 98 },
-  { code: 'GB', name: 'Reino Unido', flag: '🇬🇧', visitors: 87 },
-  { code: 'CO', name: 'Colombia', flag: '🇨🇴', visitors: 79 },
-  { code: 'PE', name: 'Perú', flag: '🇵🇪', visitors: 64 },
-];
-
 export function getFlagEmoji(countryCode: string): string {
-  const code = countryCode.toUpperCase();
+  const code = (countryCode || '').toUpperCase().trim();
   if (code.length !== 2) return '🌐';
   const codePoints = code
     .split('')
@@ -34,16 +15,19 @@ export function getFlagEmoji(countryCode: string): string {
 }
 
 export function getCountryName(countryCode: string): string {
+  const code = (countryCode || '').toUpperCase().trim();
   try {
     const dn = new Intl.DisplayNames(['es'], { type: 'region' });
-    return dn.of(countryCode.toUpperCase()) || countryCode;
+    return dn.of(code) || code;
   } catch {
-    return countryCode;
+    return code;
   }
 }
 
-const STORAGE_KEY = 'bt_visitor_counts';
-const SESSION_KEY = 'bt_session_counted';
+const STORAGE_KEY = 'bt_visitor_counts_live';
+const SESSION_KEY = 'bt_session_counted_live';
+const API_URL = 'https://mantledb.sh/v2/bancatransparente_live_v1/visitors';
+const INCREMENT_URL = 'https://mantledb.sh/v2/increment/bancatransparente_live_v1/visitors';
 
 export function getStoredVisitorStats(): CountryVisitorStat[] {
   try {
@@ -51,7 +35,7 @@ export function getStoredVisitorStats(): CountryVisitorStat[] {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed) && parsed.length > 0) {
+        if (Array.isArray(parsed)) {
           return parsed;
         }
       }
@@ -59,18 +43,52 @@ export function getStoredVisitorStats(): CountryVisitorStat[] {
   } catch {
     // ignore
   }
-  return INITIAL_VISITOR_STATS;
+  return [];
 }
 
-export async function recordVisitAndGetStats(): Promise<CountryVisitorStat[]> {
-  const currentStats = getStoredVisitorStats();
+export function parseRawStatsToCountryStats(rawData: Record<string, unknown>): CountryVisitorStat[] {
+  const stats: CountryVisitorStat[] = [];
+  if (!rawData || typeof rawData !== 'object') return stats;
 
-  if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem(SESSION_KEY)) {
-    return currentStats;
+  for (const [key, value] of Object.entries(rawData)) {
+    const code = key.toUpperCase().trim();
+    const count = typeof value === 'number' ? value : Number(value);
+    if (/^[A-Z]{2}$/.test(code) && !Number.isNaN(count) && count > 0) {
+      stats.push({
+        code,
+        name: getCountryName(code),
+        flag: getFlagEmoji(code),
+        visitors: count,
+      });
+    }
   }
 
-  let detectedCode = 'AR';
+  stats.sort((a, b) => b.visitors - a.visitors);
+  return stats;
+}
 
+export async function fetchLiveVisitorStats(): Promise<CountryVisitorStat[]> {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3500);
+    const res = await fetch(API_URL, { signal: controller.signal });
+    clearTimeout(timeout);
+
+    if (res.ok) {
+      const data = await res.json();
+      const stats = parseRawStatsToCountryStats(data);
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+      }
+      return stats;
+    }
+  } catch (err) {
+    console.debug('Failed to fetch live visitor stats', err);
+  }
+  return getStoredVisitorStats();
+}
+
+async function detectVisitorCountry(): Promise<string> {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 2500);
@@ -78,49 +96,62 @@ export async function recordVisitAndGetStats(): Promise<CountryVisitorStat[]> {
     clearTimeout(timeout);
     if (res.ok) {
       const data = await res.json();
-      if (data.country_code && data.country_code.length === 2) {
-        detectedCode = data.country_code.toUpperCase();
+      if (data.country_code && typeof data.country_code === 'string') {
+        const code = data.country_code.toUpperCase().trim();
+        if (/^[A-Z]{2}$/.test(code)) return code;
       }
     }
   } catch {
-    const lang = (navigator.language || '').toUpperCase();
-    const parts = lang.split('-');
-    if (parts.length > 1 && parts[1].length === 2) {
-      detectedCode = parts[1];
-    }
+    // fallback
   }
-
-  const existingIdx = currentStats.findIndex((c) => c.code === detectedCode);
-  let updated: CountryVisitorStat[];
-
-  if (existingIdx >= 0) {
-    updated = currentStats.map((item, idx) =>
-      idx === existingIdx ? { ...item, visitors: item.visitors + 1 } : item
-    );
-  } else {
-    updated = [
-      ...currentStats,
-      {
-        code: detectedCode,
-        name: getCountryName(detectedCode),
-        flag: getFlagEmoji(detectedCode),
-        visitors: 1,
-      },
-    ];
-  }
-
-  updated.sort((a, b) => b.visitors - a.visitors);
 
   try {
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-    }
-    if (typeof sessionStorage !== 'undefined') {
-      sessionStorage.setItem(SESSION_KEY, 'true');
+    const lang = (navigator.language || '').toUpperCase();
+    const parts = lang.split('-');
+    if (parts.length > 1 && /^[A-Z]{2}$/.test(parts[1])) {
+      return parts[1];
     }
   } catch {
     // ignore
   }
 
-  return updated;
+  return 'AR';
+}
+
+export async function recordVisitAndGetStats(): Promise<CountryVisitorStat[]> {
+  const isAlreadyCounted =
+    typeof sessionStorage !== 'undefined' && sessionStorage.getItem(SESSION_KEY) === 'true';
+
+  if (!isAlreadyCounted) {
+    try {
+      const countryCode = await detectVisitorCountry();
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 3500);
+      const incRes = await fetch(INCREMENT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key: countryCode, by: 1 }),
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+
+      // If namespace entry didn't exist, initialize it
+      if (!incRes.ok) {
+        await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ [countryCode]: 1 }),
+        });
+      }
+
+      if (typeof sessionStorage !== 'undefined') {
+        sessionStorage.setItem(SESSION_KEY, 'true');
+      }
+    } catch (err) {
+      console.debug('Could not increment visitor count', err);
+    }
+  }
+
+  return await fetchLiveVisitorStats();
 }
