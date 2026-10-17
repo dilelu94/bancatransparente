@@ -68,8 +68,8 @@ export const SESSIONS_DATA: Session[] = [
         status: 'ausente',
         imageUrl: '/deputies/maria-florencia-de-sensi.png',
                 socialMedia: {
-          x: { handle: "@flordesensi", url: "https://x.com/flordesensi" },
-          instagram: { handle: "@flordesensi", url: "https://www.instagram.com/flordesensi" },
+          x: { handle: "@desensiflor", url: "https://x.com/desensiflor" },
+          instagram: { handle: "@florenciadesensi", url: "https://www.instagram.com/florenciadesensi/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mdesensi/',
         cuit: '27-33294889-5',
@@ -85,6 +85,7 @@ export const SESSIONS_DATA: Session[] = [
         imageUrl: '/deputies/alejandro-finocchiaro.png',
                 socialMedia: {
           x: { handle: "@alefinocchiaro", url: "https://x.com/alefinocchiaro" },
+          instagram: { handle: "@alejandro_finocchiaro", url: "https://www.instagram.com/alejandro_finocchiaro/" },
           facebook: { handle: "AlejandroFinocchiaroOK", url: "https://www.facebook.com/AlejandroFinocchiaroOK" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/afinocchiaro/'
@@ -153,10 +154,7 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/daiana-fernandez-molero.png',
-                socialMedia: {
-          x: { handle: "@daianafmolero", url: "https://x.com/daianafmolero" },
-          instagram: { handle: "@daianafmolero", url: "https://www.instagram.com/daianafmolero" },
-        },
+                socialMedia: {},
         profileUrl: 'https://www.hcdn.gob.ar/diputados/dfernandezm/'
       },
       {
@@ -209,7 +207,7 @@ export const SESSIONS_DATA: Session[] = [
         imageUrl: '/deputies/martin-ardohain.png',
                 socialMedia: {
           x: { handle: "@catoardohain", url: "https://x.com/catoardohain" },
-          instagram: { handle: "@catoardohain", url: "https://www.instagram.com/catoardohain" },
+          instagram: { handle: "@martinardohain", url: "https://www.instagram.com/martinardohain/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mardohain/'
       },
@@ -222,8 +220,8 @@ export const SESSIONS_DATA: Session[] = [
         status: 'ausente',
         imageUrl: '/deputies/emmanuel-bianchetti.png',
                 socialMedia: {
-          x: { handle: "@ebianchetti_", url: "https://x.com/ebianchetti_" },
-          instagram: { handle: "@emmanuelbianchetti", url: "https://www.instagram.com/emmanuelbianchetti" },
+          x: { handle: "@Bianchetti_E", url: "https://x.com/Bianchetti_E" },
+          instagram: { handle: "@emmanuel.bianchetti", url: "https://www.instagram.com/emmanuel.bianchetti/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/rbianchetti/'
       },
@@ -348,7 +346,7 @@ export const SESSIONS_DATA: Session[] = [
         imageUrl: '/deputies/karina-banfi.png',
                 socialMedia: {
           x: { handle: "@KBanfi", url: "https://x.com/KBanfi" },
-          instagram: { handle: "@karina_banfi", url: "https://www.instagram.com/karina_banfi" },
+          instagram: { handle: "@kbanfi", url: "https://www.instagram.com/kbanfi/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/kbanfi/'
       },
@@ -389,6 +387,7 @@ export const SESSIONS_DATA: Session[] = [
         imageUrl: '/deputies/alejandra-torres.png',
         socialMedia: {
           x: { handle: "@Ale_Torres60", url: "https://x.com/Ale_Torres60" },
+          instagram: { handle: "@aletorres60", url: "https://www.instagram.com/aletorres60/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ltorres/'
       },
@@ -527,6 +526,7 @@ export const SESSIONS_DATA: Session[] = [
         status: 'ausente',
         imageUrl: '/deputies/claudio-alvarez.png',
         socialMedia: {
+          x: { handle: "@uthgrasanluis", url: "https://x.com/uthgrasanluis" },
           instagram: { handle: "@claudio_ariel_alvarez", url: "https://www.instagram.com/claudio_ariel_alvarez/" },
           facebook: { handle: "acuerdosanluis", url: "https://www.facebook.com/acuerdosanluis/" },
         },
@@ -568,7 +568,7 @@ export const SESSIONS_DATA: Session[] = [
         status: 'ausente',
         imageUrl: '/deputies/gladys-medina.png',
                 socialMedia: {
-          x: { handle: "@gladysmedina_ok", url: "https://x.com/gladysmedina_ok" },
+          x: { handle: "@GladysMedinaOK", url: "https://x.com/GladysMedinaOK" },
           instagram: { handle: "@gladysmedinaoficial", url: "https://www.instagram.com/gladysmedinaoficial" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gmedina/'
