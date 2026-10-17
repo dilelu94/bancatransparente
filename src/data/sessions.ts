@@ -628,7 +628,9 @@ export const SESSIONS_DATA: Session[] = [
           instagram: { handle: "@karinamaureiraok", url: "https://www.instagram.com/karinamaureiraok/" },
           facebook: { handle: "karina.maureira.9", url: "https://www.facebook.com/karina.maureira.9" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/kmaureira/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/kmaureira/',
+        cuit: '23-22139209-4',
+        dni: '22.139.209'
       }
     ]
   }
