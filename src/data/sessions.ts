@@ -456,9 +456,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Rosario, Santa Fe, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/jose-nunez.png',
-                socialMedia: {
-          x: { handle: "@JoseNunezOK", url: "https://x.com/JoseNunezOK" },
-          instagram: { handle: "@josenunezok", url: "https://www.instagram.com/josenunezok" },
+        socialMedia: {
+          instagram: { handle: "@josenunezjurado", url: "https://www.instagram.com/josenunezjurado/" },
+          facebook: { handle: "josenunezjurado", url: "https://www.facebook.com/josenunezjurado" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jnunez/'
       },
