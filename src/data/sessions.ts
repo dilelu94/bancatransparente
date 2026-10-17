@@ -561,17 +561,27 @@ export const SESSIONS_DATA: Session[] = [
       },
       {
         id: 'gladys-medina',
-        name: 'Gladys Medina',
+        name: 'Gladys del Valle Medina',
         party: 'Independencia',
         province: 'Tucumán',
-        locationName: 'Banda del Río Salí, Tucumán, Argentina',
+        locationName: 'Reyes Católicos 298, Banda del Río Salí, Tucumán, Argentina',
+        address: 'Reyes Católicos 298, Banda del Río Salí, Tucumán (CP 4109)',
+        addressSource: 'https://w20argentina.com/empresa/medina-gladys-del-valle-27233105193',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/medina-gladys-del-valle-27233105193'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/gladys-medina.png',
-                socialMedia: {
+        socialMedia: {
           x: { handle: "@GladysMedinaOK", url: "https://x.com/GladysMedinaOK" },
           instagram: { handle: "@gladysmedinaoficial", url: "https://www.instagram.com/gladysmedinaoficial" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/gmedina/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/gmedina/',
+        cuit: '27-23310519-3',
+        dni: '23.310.519'
       },
       {
         id: 'javier-noguera',
