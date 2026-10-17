@@ -187,61 +187,6 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
             )}
           </div>
 
-          {/* Estimated Salary / Dieta Legislativa */}
-          {(() => {
-            const salary = getDeputySalary(deputy);
-            return (
-              <div className="bg-emerald-50/70 border border-emerald-200/90 rounded-xl p-4 text-xs text-slate-700 space-y-3">
-                <div className="flex items-center justify-between gap-2 border-b border-emerald-200/60 pb-2">
-                  <div className="flex items-center gap-2 font-semibold text-emerald-950">
-                    <Banknote className="w-4 h-4 text-emerald-700" />
-                    <span>Ingresos Públicos Estimados (Dieta HCDN 2026)</span>
-                  </div>
-                  <span className="font-mono text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded border border-emerald-300">
-                    Bolsillo: ~{formatCurrencyARS(salary.net)}
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-800">
-                  <div className="bg-white/80 p-2.5 rounded-lg border border-emerald-200/50">
-                    <span className="text-[11px] text-slate-500 block uppercase tracking-wider font-medium">Dieta Bruta Total</span>
-                    <strong className="text-sm font-bold text-slate-900 font-mono">
-                      ~{formatCurrencyARS(salary.gross)}
-                    </strong>
-                    <span className="text-[10px] text-slate-500 block mt-0.5">
-                      Sujeto a aportes de ley y Ganancias
-                    </span>
-                  </div>
-
-                  <div className="bg-white/80 p-2.5 rounded-lg border border-emerald-200/50">
-                    <span className="text-[11px] text-slate-500 block uppercase tracking-wider font-medium">Neto Estimado de Bolsillo</span>
-                    <strong className="text-sm font-bold text-emerald-700 font-mono">
-                      ~{formatCurrencyARS(salary.net)}
-                    </strong>
-                    <span className="text-[10px] text-slate-500 block mt-0.5">
-                      Acreditación mensual promedio
-                    </span>
-                  </div>
-                </div>
-
-                <div className="text-[11px] text-slate-600 bg-white/60 p-2.5 rounded-lg border border-emerald-100 space-y-1">
-                  <div className="flex items-center justify-between">
-                    <span>Adicional por Desarraigo (&gt;100 km de CABA):</span>
-                    <strong className={salary.hasDesarraigo ? "text-emerald-700 font-semibold" : "text-slate-500 font-medium"}>
-                      {salary.hasDesarraigo ? `Aplica (+${formatCurrencyARS(SALARY_CONFIG.desarraigoNet)} neto est.)` : 'No aplica (CABA)'}
-                    </strong>
-                  </div>
-                  <p className="text-[10px] text-slate-500 italic pt-1 border-t border-slate-100 flex items-start gap-1">
-                    <Info className="w-3 h-3 flex-shrink-0 mt-0.5 text-slate-400" />
-                    <span>
-                      Estimación basada en la última pauta salarial y módulos de la Honorable Cámara de Diputados de la Nación (APL / Resoluciones de Presidencia HCDN). Varía según descuentos impositivos personales y antigüedad.
-                    </span>
-                  </p>
-                </div>
-              </div>
-            );
-          })()}
-
           {/* Address and Map or PR Callout */}
           {deputy.address && mapEmbedUrl ? (
             <div className="space-y-4">
@@ -375,6 +320,61 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
               </div>
             </div>
           )}
+
+          {/* Estimated Salary / Dieta Legislativa (ubicado por debajo del mapa y domicilio) */}
+          {(() => {
+            const salary = getDeputySalary(deputy);
+            return (
+              <div className="bg-emerald-50/70 border border-emerald-200/90 rounded-xl p-4 text-xs text-slate-700 space-y-3">
+                <div className="flex items-center justify-between gap-2 border-b border-emerald-200/60 pb-2">
+                  <div className="flex items-center gap-2 font-semibold text-emerald-950">
+                    <Banknote className="w-4 h-4 text-emerald-700" />
+                    <span>Ingresos Públicos Estimados (Dieta HCDN 2026)</span>
+                  </div>
+                  <span className="font-mono text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded border border-emerald-300">
+                    Bolsillo: ~{formatCurrencyARS(salary.net)}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-800">
+                  <div className="bg-white/80 p-2.5 rounded-lg border border-emerald-200/50">
+                    <span className="text-[11px] text-slate-500 block uppercase tracking-wider font-medium">Dieta Bruta Total</span>
+                    <strong className="text-sm font-bold text-slate-900 font-mono">
+                      ~{formatCurrencyARS(salary.gross)}
+                    </strong>
+                    <span className="text-[10px] text-slate-500 block mt-0.5">
+                      Sujeto a aportes de ley y Ganancias
+                    </span>
+                  </div>
+
+                  <div className="bg-white/80 p-2.5 rounded-lg border border-emerald-200/50">
+                    <span className="text-[11px] text-slate-500 block uppercase tracking-wider font-medium">Neto Estimado de Bolsillo</span>
+                    <strong className="text-sm font-bold text-emerald-700 font-mono">
+                      ~{formatCurrencyARS(salary.net)}
+                    </strong>
+                    <span className="text-[10px] text-slate-500 block mt-0.5">
+                      Acreditación mensual promedio
+                    </span>
+                  </div>
+                </div>
+
+                <div className="text-[11px] text-slate-600 bg-white/60 p-2.5 rounded-lg border border-emerald-100 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span>Adicional por Desarraigo (&gt;100 km de CABA):</span>
+                    <strong className={salary.hasDesarraigo ? "text-emerald-700 font-semibold" : "text-slate-500 font-medium"}>
+                      {salary.hasDesarraigo ? `Aplica (+${formatCurrencyARS(SALARY_CONFIG.desarraigoNet)} neto est.)` : 'No aplica (CABA)'}
+                    </strong>
+                  </div>
+                  <p className="text-[10px] text-slate-500 italic pt-1 border-t border-slate-100 flex items-start gap-1">
+                    <Info className="w-3 h-3 flex-shrink-0 mt-0.5 text-slate-400" />
+                    <span>
+                      Estimación basada en la última pauta salarial y módulos de la Honorable Cámara de Diputados de la Nación (APL / Resoluciones de Presidencia HCDN). Varía según descuentos impositivos personales y antigüedad.
+                    </span>
+                  </p>
+                </div>
+              </div>
+            );
+          })()}
         </div>
 
         {/* Modal Footer */}
