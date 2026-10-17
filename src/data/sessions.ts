@@ -484,9 +484,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Salta, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/bernardo-biella.png',
-                socialMedia: {
-          x: { handle: "@BiellaBernardo", url: "https://x.com/BiellaBernardo" },
-          instagram: { handle: "@bernardobiella", url: "https://www.instagram.com/bernardobiella" },
+        socialMedia: {
+          instagram: { handle: "@elmedicoenmicasa", url: "https://www.instagram.com/elmedicoenmicasa/" },
+          facebook: { handle: "DrBernardoBiella", url: "https://www.facebook.com/DrBernardoBiella/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/bbiellac/'
       },
