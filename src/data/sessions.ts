@@ -623,8 +623,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Neuquén, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/karina-maureira.png',
-                socialMedia: {
-          instagram: { handle: "@karinamaureira_", url: "https://www.instagram.com/karinamaureira_" },
+        socialMedia: {
+          x: { handle: "@Karytta29", url: "https://x.com/Karytta29" },
+          instagram: { handle: "@karinamaureiraok", url: "https://www.instagram.com/karinamaureiraok/" },
+          facebook: { handle: "karina.maureira.9", url: "https://www.facebook.com/karina.maureira.9" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/kmaureira/'
       }
