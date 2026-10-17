@@ -6,10 +6,12 @@ describe('SESSIONS_DATA', () => {
     expect(SESSIONS_DATA.length).toBeGreaterThan(0);
   });
 
-  it('should have the October 15, 2026 session with 43 deputies', () => {
+  it('should have the October 15, 2026 session with 257 total deputies and 43 absent deputies', () => {
     const session2026 = SESSIONS_DATA.find((s) => s.id === '2026-10-15');
     expect(session2026).toBeDefined();
-    expect(session2026?.deputies.length).toBe(43);
+    expect(session2026?.deputies.length).toBe(257);
+    const absentDeputies = session2026?.deputies.filter((d) => d.status === 'ausente');
+    expect(absentDeputies?.length).toBe(43);
   });
 
   it('should have correct quorum numbers for October 15, 2026 session', () => {
@@ -27,7 +29,7 @@ describe('SESSIONS_DATA', () => {
       expect(deputy.party).toBeTruthy();
       expect(deputy.province).toBeTruthy();
       expect(deputy.locationName).toBeTruthy();
-      expect(deputy.status).toBe('ausente');
+      expect(deputy.status).toMatch(/^(ausente|presente)$/);
       expect(deputy.profileUrl).toBeTruthy();
       expect(deputy.profileUrl).toMatch(/^https:\/\/www\.hcdn\.gob\.ar\/diputados\//);
     });

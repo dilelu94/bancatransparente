@@ -33,24 +33,29 @@ export function App() {
     return SESSIONS_DATA.find((s) => s.id === selectedSessionId) || SESSIONS_DATA[0];
   }, [selectedSessionId]);
 
-  const uniqueParties = useMemo(() => {
-    const set = new Set(currentSession.deputies.map((d) => d.party));
-    return Array.from(set).sort();
+  // Para la sesión actual, mostramos únicamente los legisladores que no dieron quórum (ausentes)
+  const sessionAbsentDeputies = useMemo(() => {
+    return currentSession.deputies.filter((d) => d.status === 'ausente');
   }, [currentSession]);
+
+  const uniqueParties = useMemo(() => {
+    const set = new Set(sessionAbsentDeputies.map((d) => d.party));
+    return Array.from(set).sort();
+  }, [sessionAbsentDeputies]);
 
   const uniqueProvinces = useMemo(() => {
-    const set = new Set(currentSession.deputies.map((d) => d.province));
+    const set = new Set(sessionAbsentDeputies.map((d) => d.province));
     return Array.from(set).sort();
-  }, [currentSession]);
+  }, [sessionAbsentDeputies]);
 
   const filteredDeputies = useMemo(() => {
-    return currentSession.deputies.filter((d) => {
+    return sessionAbsentDeputies.filter((d) => {
       const matchesSearch = d.name.toLowerCase().includes(searchQuery.toLowerCase().trim());
       const matchesParty = selectedParty ? d.party === selectedParty : true;
       const matchesProvince = selectedProvince ? d.province === selectedProvince : true;
       return matchesSearch && matchesParty && matchesProvince;
     });
-  }, [currentSession, searchQuery, selectedParty, selectedProvince]);
+  }, [sessionAbsentDeputies, searchQuery, selectedParty, selectedProvince]);
 
   const handleResetFilters = () => {
     setSearchQuery('');

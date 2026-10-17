@@ -27,6 +27,10 @@ export interface Deputy {
     instagram?: { handle: string; url: string };
     facebook?: { handle: string; url: string };
   };
+  officePhone?: string;
+  office?: string;
+  officialEmail?: string;
+  mandate?: string;
 }
 
 export interface Session {
