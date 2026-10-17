@@ -581,9 +581,10 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Tafí Viejo, Tucumán, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/javier-noguera.png',
-                socialMedia: {
-          x: { handle: "@javiernogueira", url: "https://x.com/javiernogueira" },
-          instagram: { handle: "@javiernogueraok", url: "https://www.instagram.com/javiernogueraok" },
+        socialMedia: {
+          x: { handle: "@javier_noguera", url: "https://x.com/javier_noguera" },
+          instagram: { handle: "@javier_noguera", url: "https://www.instagram.com/javier_noguera/" },
+          facebook: { handle: "javiernoguera", url: "https://www.facebook.com/javiernoguera" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mnoguera/'
       },
