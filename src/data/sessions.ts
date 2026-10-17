@@ -606,14 +606,18 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Nancy Viviana Picón Martínez',
         party: 'Producción y Trabajo',
         province: 'San Juan',
-        locationName: 'Rivadavia, San Juan, Argentina',
+        locationName: 'Av. San Martín Este 478, San Juan, Argentina',
+        address: 'Av. San Martín Este 478 PA, San Juan (CP 5400)',
+        addressSource: 'https://indicadores.ar/declaraciones-juradas/picon-martinez-nancy-viviana-27251183207',
         status: 'ausente',
         imageUrl: '/deputies/nancy-viviana-picon-martinez.png',
-                socialMedia: {
+        socialMedia: {
           x: { handle: "@NancyPiconSJ", url: "https://x.com/NancyPiconSJ" },
           instagram: { handle: "@nancypiconsj", url: "https://www.instagram.com/nancypiconsj" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/npiconm/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/npiconm/',
+        cuit: '27-25118320-7',
+        dni: '25.118.320'
       },
       {
         id: 'karina-maureira',
