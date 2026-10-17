@@ -470,9 +470,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Gálvez, Santa Fe, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/gisela-scaglia.png',
-                socialMedia: {
-          x: { handle: "@GScaglia", url: "https://x.com/GScaglia" },
-          instagram: { handle: "@gisela.scaglia", url: "https://www.instagram.com/gisela.scaglia" },
+        socialMedia: {
+          instagram: { handle: "@giselascaglia", url: "https://www.instagram.com/giselascaglia/" },
+          facebook: { handle: "gisela.scaglia", url: "https://www.facebook.com/gisela.scaglia" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gscaglia/'
       },
