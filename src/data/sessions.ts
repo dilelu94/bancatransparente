@@ -442,9 +442,9 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Bariloche, Río Negro, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/sergio-eduardo-capozzi.png',
-                socialMedia: {
-          x: { handle: "@SergioCapozzi", url: "https://x.com/SergioCapozzi" },
-          instagram: { handle: "@sergiocapozzi", url: "https://www.instagram.com/sergiocapozzi" },
+        socialMedia: {
+          instagram: { handle: "@sergiocapozzi_", url: "https://www.instagram.com/sergiocapozzi_/" },
+          facebook: { handle: "sergioecapozzi", url: "https://www.facebook.com/sergioecapozzi" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/scapozzi/'
       },
