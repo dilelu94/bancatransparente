@@ -39,6 +39,9 @@ const getPartyColor = (party: string): { bg: string; text: string; border: strin
   if (p.includes('producción y trabajo') || p.includes('neuquinidad') || p.includes('santa cruz')) {
     return { bg: 'bg-blue-50', text: 'text-blue-800', border: 'border-blue-200' };
   }
+  if (p.includes('argentina federal') || p.includes('acuerdo san luis')) {
+    return { bg: 'bg-cyan-50', text: 'text-cyan-800', border: 'border-cyan-200' };
+  }
   return { bg: 'bg-slate-50', text: 'text-slate-800', border: 'border-slate-200' };
 };
 

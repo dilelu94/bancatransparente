@@ -519,15 +519,16 @@ export const SESSIONS_DATA: Session[] = [
         profileUrl: 'https://www.hcdn.gob.ar/diputados/yvega/'
       },
       {
-        id: 'claudio-alvarez',
-        name: 'Claudio Álvarez',
-        party: 'Innovación Federal',
-        province: 'Misiones',
-        locationName: 'Posadas, Misiones, Argentina',
+        id: 'claudio-ariel-alvarez',
+        name: 'Claudio Ariel Álvarez',
+        party: 'Argentina Federal',
+        province: 'San Luis',
+        locationName: 'San Luis, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/claudio-alvarez.png',
-                socialMedia: {
-          facebook: { handle: "claudioalvarez", url: "https://www.facebook.com/claudioalvarez" },
+        socialMedia: {
+          instagram: { handle: "@claudio_ariel_alvarez", url: "https://www.instagram.com/claudio_ariel_alvarez/" },
+          facebook: { handle: "acuerdosanluis", url: "https://www.facebook.com/acuerdosanluis/" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/caalvarez/'
       },
