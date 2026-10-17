@@ -620,7 +620,9 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Karina Maureira',
         party: 'La Neuquinidad',
         province: 'Neuquén',
-        locationName: 'Neuquén, Argentina',
+        locationName: 'Urquiza 1643, General Roca, Río Negro, Argentina',
+        address: 'Urquiza 1643, General Roca, Río Negro',
+        addressSource: 'https://indicadores.ar/declaraciones-juradas/maureira-karina-alejandra-23221392094',
         status: 'ausente',
         imageUrl: '/deputies/karina-maureira.png',
         socialMedia: {
