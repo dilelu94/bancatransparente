@@ -1,7 +1,11 @@
 import React from 'react';
-import { Github, Landmark, Heart } from 'lucide-react';
+import { Github, Landmark, Heart, Globe } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenVisitorStats: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenVisitorStats }) => {
   return (
     <footer className="mt-16 bg-slate-900 text-slate-400 border-t border-slate-800 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -36,7 +40,20 @@ export const Footer: React.FC = () => {
             <span>para todo el pueblo argentino</span>
           </p>
         </div>
+
+        {/* Registros de visitantes al fondo abajo de todo */}
+        <div className="mt-4 pt-3 border-t border-slate-800/50 flex justify-center">
+          <button
+            type="button"
+            onClick={onOpenVisitorStats}
+            className="inline-flex items-center gap-1.5 text-slate-400 hover:text-sky-400 text-xs transition-colors cursor-pointer py-1.5 px-3 rounded-md hover:bg-slate-800/60"
+          >
+            <Globe className="w-3.5 h-3.5 text-sky-400" />
+            <span>Registros de visitantes</span>
+          </button>
+        </div>
       </div>
     </footer>
   );
 };
+

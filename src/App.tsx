@@ -1,19 +1,33 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { SESSIONS_DATA } from './data/sessions';
 import { Deputy } from './types';
 import { Header } from './components/Header';
 import { Filters } from './components/Filters';
 import { DeputyCard } from './components/DeputyCard';
 import { DeputyModal } from './components/DeputyModal';
+import { VisitorModal } from './components/VisitorModal';
 import { Footer } from './components/Footer';
 import { Users, Info } from 'lucide-react';
+import {
+  CountryVisitorStat,
+  getStoredVisitorStats,
+  recordVisitAndGetStats,
+} from './data/visitorStats';
 
 export function App() {
   const [selectedSessionId, setSelectedSessionId] = useState<string>(SESSIONS_DATA[0].id);
   const [selectedDeputy, setSelectedDeputy] = useState<Deputy | null>(null);
+  const [isVisitorModalOpen, setIsVisitorModalOpen] = useState<boolean>(false);
+  const [visitorStats, setVisitorStats] = useState<CountryVisitorStat[]>(() => getStoredVisitorStats());
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedParty, setSelectedParty] = useState<string>('');
   const [selectedProvince, setSelectedProvince] = useState<string>('');
+
+  useEffect(() => {
+    recordVisitAndGetStats().then((stats) => {
+      setVisitorStats(stats);
+    });
+  }, []);
 
   const currentSession = useMemo(() => {
     return SESSIONS_DATA.find((s) => s.id === selectedSessionId) || SESSIONS_DATA[0];
@@ -101,12 +115,19 @@ export function App() {
         )}
       </main>
 
-      <Footer />
+      <Footer onOpenVisitorStats={() => setIsVisitorModalOpen(true)} />
 
-      {/* Modal */}
+      {/* Deputy Modal */}
       <DeputyModal
         deputy={selectedDeputy}
         onClose={() => setSelectedDeputy(null)}
+      />
+
+      {/* Visitor Stats Modal */}
+      <VisitorModal
+        isOpen={isVisitorModalOpen}
+        onClose={() => setIsVisitorModalOpen(false)}
+        stats={visitorStats}
       />
     </div>
   );
