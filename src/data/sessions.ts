@@ -212,9 +212,14 @@ export const SESSIONS_DATA: Session[] = [
         locationName: 'Paraná, Entre Ríos, Argentina',
         status: 'ausente',
         imageUrl: '/deputies/alicia-fregonese.png',
-                socialMedia: {
+        dni: '14.271.591',
+        cuit: '27-14271591-6',
+        officialEmail: 'afregonese@hcdn.gob.ar',
+        mandate: '2025-2029',
+        socialMedia: {
           x: { handle: "@aliciafregonese", url: "https://x.com/aliciafregonese" },
           instagram: { handle: "@aliciafregonese", url: "https://www.instagram.com/aliciafregonese" },
+          facebook: { handle: "aliciafregonese", url: "https://www.facebook.com/aliciafregonese" },
         },
         profileUrl: 'https://www.hcdn.gob.ar/diputados/afregonese/'
       },
