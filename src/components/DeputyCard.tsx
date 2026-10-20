@@ -45,35 +45,9 @@ const getPartyColor = (party: string): { bg: string; text: string; border: strin
   return { bg: 'bg-slate-50', text: 'text-slate-800', border: 'border-slate-200' };
 };
 
-const getDeclarationBadge = (anio?: number): { label: string; className: string } | null => {
-  if (!anio) return null;
-  // El periodo más reciente publicado por la Oficina Anticorrupción es 2024
-  const diff = 2024 - anio;
-  if (diff <= 0) {
-    // Este año / más reciente (2024): texto blanco con borde sutil / fondo oscuro traslúcido
-    return {
-      label: `última declaración (${anio})`,
-      className: 'bg-white/90 text-slate-800 border-slate-300 shadow-xs dark:bg-slate-800/80 dark:text-slate-100 dark:border-slate-600'
-    };
-  } else if (diff === 1) {
-    // Hace 1 año (2023): amarillo vibrante con texto legible y oscuro
-    return {
-      label: `última declaración (${anio})`,
-      className: 'bg-amber-100 text-amber-900 border-amber-300 font-semibold dark:bg-amber-500/20 dark:text-amber-300 dark:border-amber-500/40'
-    };
-  } else {
-    // 2 años o más (2022 o anterior): rojo vibrante con texto legible y oscuro
-    return {
-      label: `última declaración (${anio})`,
-      className: 'bg-rose-100 text-rose-900 border-rose-300 font-semibold dark:bg-rose-500/20 dark:text-rose-300 dark:border-rose-500/40'
-    };
-  }
-};
-
 export const DeputyCard: React.FC<DeputyCardProps> = ({ deputy, onClick }) => {
   const partyColor = getPartyColor(deputy.party);
   const initials = getInitials(deputy.name);
-  const declBadge = getDeclarationBadge(deputy.declaration?.anio);
 
   return (
     <div
@@ -106,21 +80,10 @@ export const DeputyCard: React.FC<DeputyCardProps> = ({ deputy, onClick }) => {
             )}
           </div>
 
-          <div className="flex flex-col items-end gap-1.5">
-            <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
-              <UserX className="w-3 h-3" />
-              Sin Quórum
-            </span>
-
-            {declBadge && (
-              <span
-                className={`text-[10px] lowercase tracking-tight px-2 py-0.5 rounded-full border transition-colors ${declBadge.className}`}
-                title={`Declaración Jurada Patrimonial Integral presentada ante la Oficina Anticorrupción (${deputy.declaration?.anio})`}
-              >
-                {declBadge.label}
-              </span>
-            )}
-          </div>
+          <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
+            <UserX className="w-3 h-3" />
+            Sin Quórum
+          </span>
         </div>
 
         <div className="mt-4">
