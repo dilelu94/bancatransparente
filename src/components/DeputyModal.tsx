@@ -267,9 +267,25 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
 
               {showVehicles && (
                 <div className="p-4 pt-1 border-t border-slate-200 space-y-2.5 bg-white">
-                  <div className="text-[11px] text-slate-500 pb-1 italic border-b border-slate-100 flex items-center justify-between">
-                    <span>Valuación fiscal oficial (DDJJ {deputy.declaration?.anio || 2024})</span>
-                    <span>Dominio reservado por Ley 25.326</span>
+                  <div className="text-[11px] text-slate-500 pb-1 border-b border-slate-100 flex items-center justify-between">
+                    {(() => {
+                      const anio = deputy.declaration?.anio || 2024;
+                      const diff = 2026 - anio;
+                      const colorClass =
+                        diff <= 0
+                          ? 'bg-slate-100 text-slate-800 border-slate-300 dark:bg-white/10 dark:text-white dark:border-white/20'
+                          : diff === 1
+                          ? 'bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-500/20 dark:text-amber-300 dark:border-amber-500/40'
+                          : 'bg-rose-100 text-rose-900 border-rose-300 dark:bg-rose-500/20 dark:text-rose-300 dark:border-rose-500/40';
+                      return (
+                        <span className={`px-2 py-0.5 rounded border font-medium ${colorClass}`}>
+                          Última Valuación fiscal oficial (DDJJ {anio})
+                        </span>
+                      );
+                    })()}
+                    <span className="italic text-slate-400 dark:text-slate-500">
+                      Dominio reservado por Ley 25.326
+                    </span>
                   </div>
                   <div className="space-y-2">
                     {vehicles.map((v, idx) => (
