@@ -50,22 +50,22 @@ const getDeclarationBadge = (anio?: number): { label: string; className: string 
   // El periodo más reciente publicado por la Oficina Anticorrupción es 2024
   const diff = 2024 - anio;
   if (diff <= 0) {
-    // de este año / más reciente: fondo blanco
+    // Este año / más reciente (2024): texto blanco con borde sutil / fondo oscuro traslúcido
     return {
       label: `última declaración (${anio})`,
-      className: 'bg-white text-slate-700 border-slate-300 shadow-xs'
+      className: 'bg-white/90 text-slate-800 border-slate-300 shadow-xs dark:bg-slate-800/80 dark:text-slate-100 dark:border-slate-600'
     };
   } else if (diff === 1) {
-    // hace 1 año (2023): amarillo
+    // Hace 1 año (2023): amarillo vibrante con texto legible y oscuro
     return {
       label: `última declaración (${anio})`,
-      className: 'bg-amber-100 text-amber-900 border-amber-300 font-semibold'
+      className: 'bg-amber-100 text-amber-900 border-amber-300 font-semibold dark:bg-amber-500/20 dark:text-amber-300 dark:border-amber-500/40'
     };
   } else {
-    // 2 años o más (2022 o anterior): rojo
+    // 2 años o más (2022 o anterior): rojo vibrante con texto legible y oscuro
     return {
       label: `última declaración (${anio})`,
-      className: 'bg-rose-100 text-rose-900 border-rose-300 font-semibold'
+      className: 'bg-rose-100 text-rose-900 border-rose-300 font-semibold dark:bg-rose-500/20 dark:text-rose-300 dark:border-rose-500/40'
     };
   }
 };
