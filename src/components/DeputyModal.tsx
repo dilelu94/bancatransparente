@@ -78,18 +78,26 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
   const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}&sourceid=chrome&ie=UTF-8&source=chrome.ctxt`;
   
   // Pre-filled GitHub issue URL to make contributing address and sources effortless
-  const issueTitle = encodeURIComponent(`Aporte de domicilio / CUIT: ${deputy.name}`);
+  const hasCuitOrDni = Boolean(deputy.cuit || deputy.dni);
+  const issueTitle = encodeURIComponent(
+    hasCuitOrDni
+      ? `Aporte de domicilio: ${deputy.name}`
+      : `Aporte de domicilio / CUIT: ${deputy.name}`
+  );
+  const cuitSection = hasCuitOrDni
+    ? `### CUIT / DNI Registrado:\n${[deputy.cuit ? `CUIT: ${deputy.cuit}` : '', deputy.dni ? `DNI: ${deputy.dni}` : ''].filter(Boolean).join(' | ')}\n\n`
+    : `### CUIT / DNI:\n<!-- CUIT y/o DNI verificado en registros públicos -->\n\n`;
+
   const issueBody = encodeURIComponent(
     `### Legislador: ${deputy.name}\n` +
     `**Bloque:** ${deputy.party}\n` +
     `**Provincia:** ${deputy.province}\n\n` +
     `---\n\n` +
-    `### CUIT / DNI:\n` +
-    `<!-- CUIT y/o DNI verificado en registros públicos -->\n\n\n` +
+    cuitSection +
     `### Domicilio propuesto:\n` +
     `<!-- Calle, número, localidad, provincia, código postal -->\n\n\n` +
     `### Fuentes y enlaces de verificación pública:\n` +
-    `<!-- Enlaces a AFIP, Boletín Oficial, directorio mercantil o fuentes oficiales -->\n`
+    `<!-- Enlaces a AFIP/ARCA, Boletín Oficial, directorio mercantil o guías públicas oficiales -->\n`
   );
   const githubIssueUrl = `https://github.com/dilelu94/bancatransparente/issues/new?title=${issueTitle}&body=${issueBody}`;
 
