@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Deputy } from '../types';
-import { X, Search, MapPin, Building2, ExternalLink, Home, MessageSquarePlus, Github, Banknote, Info, Car, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, Search, Building2, ExternalLink, Home, MessageSquarePlus, Github, Banknote, Info, Car, ChevronDown, ChevronUp } from 'lucide-react';
 import { getDeputySalary, formatCurrencyARS, SALARY_CONFIG } from '../data/sessions';
 
 function formatVehicleName(desc: string): string {
@@ -337,14 +337,6 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
                 <p className="text-sm font-semibold text-slate-900">
                   {deputy.address}
                 </p>
-                {deputy.cuit && (
-                  <p className="text-slate-600">
-                    <strong>Identificación fiscal:</strong>{' '}
-                    <span className="font-mono font-medium text-slate-900 bg-white px-1.5 py-0.5 rounded border border-sky-200">
-                      CUIT {deputy.cuit}
-                    </span>
-                  </p>
-                )}
                 {deputy.addressNotes && (
                   <p className="text-slate-700 bg-white/90 p-2.5 rounded-lg border border-sky-200 text-xs leading-relaxed">
                     <strong className="text-slate-900 font-semibold">Nota:</strong> {deputy.addressNotes}
@@ -389,25 +381,19 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
                 ) : null}
               </div>
 
-              <div>
-                <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                  <MapPin className="w-4 h-4 text-sky-600" />
-                  <span>Ubicación: {deputy.address}</span>
-                </div>
-                <div className="w-full h-64 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-inner">
-                  <iframe
-                    title={`Mapa de ubicación de ${deputy.name}`}
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    scrolling="no"
-                    marginHeight={0}
-                    marginWidth={0}
-                    src={mapEmbedUrl}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
+              <div className="w-full h-64 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-inner">
+                <iframe
+                  title={`Mapa de ubicación de ${deputy.name}`}
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  scrolling="no"
+                  marginHeight={0}
+                  marginWidth={0}
+                  src={mapEmbedUrl}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           ) : (
