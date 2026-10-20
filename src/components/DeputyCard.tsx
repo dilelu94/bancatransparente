@@ -45,9 +45,35 @@ const getPartyColor = (party: string): { bg: string; text: string; border: strin
   return { bg: 'bg-slate-50', text: 'text-slate-800', border: 'border-slate-200' };
 };
 
+const getDeclarationBadge = (anio?: number): { label: string; className: string } | null => {
+  if (!anio) return null;
+  // El periodo más reciente publicado por la Oficina Anticorrupción es 2024
+  const diff = 2024 - anio;
+  if (diff <= 0) {
+    // de este año / más reciente: fondo blanco
+    return {
+      label: `última declaración (${anio})`,
+      className: 'bg-white text-slate-700 border-slate-300 shadow-xs'
+    };
+  } else if (diff === 1) {
+    // hace 1 año (2023): amarillo
+    return {
+      label: `última declaración (${anio})`,
+      className: 'bg-amber-100 text-amber-900 border-amber-300 font-semibold'
+    };
+  } else {
+    // 2 años o más (2022 o anterior): rojo
+    return {
+      label: `última declaración (${anio})`,
+      className: 'bg-rose-100 text-rose-900 border-rose-300 font-semibold'
+    };
+  }
+};
+
 export const DeputyCard: React.FC<DeputyCardProps> = ({ deputy, onClick }) => {
   const partyColor = getPartyColor(deputy.party);
   const initials = getInitials(deputy.name);
+  const declBadge = getDeclarationBadge(deputy.declaration?.anio);
 
   return (
     <div
@@ -65,7 +91,7 @@ export const DeputyCard: React.FC<DeputyCardProps> = ({ deputy, onClick }) => {
       <div>
         <div className="flex items-start justify-between gap-3">
           {/* Avatar representation */}
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-slate-100 to-slate-200 border-2 border-slate-300 text-slate-700 flex items-center justify-center font-bold text-lg shadow-inner group-hover:scale-105 transition-transform duration-200">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-slate-100 to-slate-200 border-2 border-slate-300 text-slate-700 flex items-center justify-center font-bold text-lg shadow-inner group-hover:scale-105 transition-transform duration-200 flex-shrink-0">
             {deputy.imageUrl ? (
               <img
                 src={deputy.imageUrl}
@@ -80,10 +106,21 @@ export const DeputyCard: React.FC<DeputyCardProps> = ({ deputy, onClick }) => {
             )}
           </div>
 
-          <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
-            <UserX className="w-3 h-3" />
-            Sin Quórum
-          </span>
+          <div className="flex flex-col items-end gap-1.5">
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
+              <UserX className="w-3 h-3" />
+              Sin Quórum
+            </span>
+
+            {declBadge && (
+              <span
+                className={`text-[10px] lowercase tracking-tight px-2 py-0.5 rounded-full border transition-colors ${declBadge.className}`}
+                title={`Declaración Jurada Patrimonial Integral presentada ante la Oficina Anticorrupción (${deputy.declaration?.anio})`}
+              >
+                {declBadge.label}
+              </span>
+            )}
+          </div>
         </div>
 
         <div className="mt-4">
