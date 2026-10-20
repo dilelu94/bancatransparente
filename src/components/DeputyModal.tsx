@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Deputy } from '../types';
-import { X, Search, Building2, ExternalLink, Home, MessageSquarePlus, Github, Banknote, Info, Car, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, Search, Building2, ExternalLink, Home, MessageSquarePlus, Github, Banknote, Info, Car, ChevronDown, ChevronUp, Flag } from 'lucide-react';
 import { getDeputySalary, formatCurrencyARS, SALARY_CONFIG } from '../data/sessions';
 
 function formatVehicleName(desc: string): string {
@@ -92,6 +92,22 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
     `<!-- Enlaces a AFIP, Boletín Oficial, directorio mercantil o fuentes oficiales -->\n`
   );
   const githubIssueUrl = `https://github.com/dilelu94/bancatransparente/issues/new?title=${issueTitle}&body=${issueBody}`;
+
+  // Pre-filled GitHub issue URL for reporting incorrect/outdated data
+  const reportTitle = encodeURIComponent(`Reporte de dato erróneo: ${deputy.name}`);
+  const reportBody = encodeURIComponent(
+    `### Reporte sobre el legislador: ${deputy.name}\n` +
+    `**Bloque:** ${deputy.party}\n` +
+    `**Distrito:** ${deputy.province}\n\n` +
+    `---\n\n` +
+    `### ¿Qué dato está mal o desactualizado?\n` +
+    `<!-- Especificar si es domicilio, CUIT, redes sociales, vehículos, foto o información legislativa -->\n\n\n` +
+    `### Dato correcto propuesto:\n` +
+    `<!-- Indicar la corrección exacta -->\n\n\n` +
+    `### Fuentes públicas / Enlaces de respaldo:\n` +
+    `<!-- Enlace a Boletín Oficial, AFIP/ARCA, HCDN, o registro público verificable -->\n`
+  );
+  const reportIssueUrl = `https://github.com/dilelu94/bancatransparente/issues/new?title=${reportTitle}&body=${reportBody}`;
 
   // Embedded Google Map only when address is available
   const mapEmbedUrl = deputy.address
@@ -504,9 +520,18 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
 
         {/* Modal Footer */}
         <div className="bg-slate-50 px-6 py-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span className="text-xs text-slate-500 text-center sm:text-left">
-            Información de acceso público parlamentario
-          </span>
+          <div className="flex items-center gap-2 text-xs text-slate-500">
+            <span>¿Algún dato mal?</span>
+            <a
+              href={reportIssueUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-semibold text-rose-600 hover:text-rose-800 hover:underline transition-colors"
+            >
+              <Flag className="w-3.5 h-3.5" />
+              <span>Reportalo</span>
+            </a>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
             {deputy.profileUrl && (
