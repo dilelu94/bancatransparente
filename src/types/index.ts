@@ -31,6 +31,42 @@ export interface Deputy {
   office?: string;
   officialEmail?: string;
   mandate?: string;
+  declaration?: DeputyAssetDeclaration;
+}
+
+export interface DeputyProperty {
+  tipo: string;
+  destino: string;
+  localidad: string;
+  porcentaje?: string;
+  fechaIngreso?: string;
+  importe: number;
+  descripcionOriginal?: string;
+}
+
+export interface DeputyVehicle {
+  descripcion: string;
+  anioFabricacion?: string;
+  porcentaje?: string;
+  fechaIngreso?: string;
+  importe: number;
+}
+
+export interface DeputyAssetDeclaration {
+  anio: number;
+  tipoDeclaracion: string;
+  cargo?: string;
+  organismo?: string;
+  totalBienesInicio: number;
+  totalBienesFinal: number;
+  totalDeudasFinal: number;
+  patrimonioNeto: number;
+  ingresosAnuales?: number;
+  inmuebles: DeputyProperty[];
+  vehiculos: DeputyVehicle[];
+  localidadesInmuebles: string[];
+  fuente: string;
+  linkFuente: string;
 }
 
 export interface Session {

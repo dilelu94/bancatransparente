@@ -11,6 +11,7 @@ export const SALARY_CONFIG = {
 };
 
 import { Session } from '../types';
+import { DEPUTY_DECLARATIONS } from './declarations';
 
 export const SESSIONS_DATA: Session[] = [
   {
@@ -137,14 +138,24 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Fernando de Andreis',
         party: 'PRO',
         province: 'Ciudad Autónoma de Buenos Aires',
-        locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
+        locationName: 'Ortiz de Ocampo 3160 Dpto. B, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Ortiz de Ocampo 3160 Dpto. B, CABA (CP 1425)',
+        addressSource: 'https://w20argentina.com/empresa/de-andreis-fernando-20249775461',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/de-andreis-fernando-20249775461'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/fernando-de-andreis.png',
                 socialMedia: {
           x: { handle: "@deAndreis", url: "https://x.com/deAndreis" },
           instagram: { handle: "@fernandodeandreis", url: "https://www.instagram.com/fernandodeandreis" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/fdeandreis/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/fdeandreis/',
+        cuit: '20-24977546-1',
+        dni: '24.977.546'
       },
       {
         id: 'daiana-fernandez-molero',
@@ -162,13 +173,23 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Antonela Giampieri',
         party: 'PRO',
         province: 'Ciudad Autónoma de Buenos Aires',
-        locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
+        locationName: 'Doblas 830 Piso 2 Dpto. B, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Doblas 830 Piso 2 Dpto. B, CABA (CP 1424)',
+        addressSource: 'https://w20argentina.com/empresa/giampieri-antonela-27339516524',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/giampieri-antonela-27339516524'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/antonela-giampieri.png',
                 socialMedia: {
           instagram: { handle: "@antogiampieri", url: "https://www.instagram.com/antogiampieri" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/agiampieri/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/agiampieri/',
+        cuit: '27-33951652-4',
+        dni: '33.951.652'
       },
       {
         id: 'alvaro-gonzalez',
@@ -202,14 +223,24 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Martín Ardohain',
         party: 'PRO',
         province: 'La Pampa',
-        locationName: 'Santa Rosa, La Pampa, Argentina',
+        locationName: 'Enriqueta Schmidt 425, Santa Rosa, La Pampa, Argentina',
+        address: 'Enriqueta Schmidt 425, Santa Rosa, La Pampa (CP 6300)',
+        addressSource: 'https://w20argentina.com/empresa/ardohain-martin-miguel-23202055869',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/ardohain-martin-miguel-23202055869'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/martin-ardohain.png',
                 socialMedia: {
           x: { handle: "@catoardohain", url: "https://x.com/catoardohain" },
           instagram: { handle: "@martinardohain", url: "https://www.instagram.com/martinardohain/" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/mardohain/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/mardohain/',
+        cuit: '23-20205586-9',
+        dni: '20.205.586'
       },
       {
         id: 'emmanuel-bianchetti',
@@ -327,14 +358,24 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Oscar Zago',
         party: 'MID',
         province: 'Ciudad Autónoma de Buenos Aires',
-        locationName: 'Ciudad Autónoma de Buenos Aires, Argentina',
+        locationName: 'Gibraltar 5365, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Gibraltar 5365, CABA (CP 1408)',
+        addressSource: 'https://w20argentina.com/empresa/zago-oscar-roberto-23165838009',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/zago-oscar-roberto-23165838009'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/oscar-zago.png',
         socialMedia: {
           x: { handle: "@OscarZagoOK", url: "https://x.com/OscarZagoOK" },
           instagram: { handle: "@dipzago", url: "https://www.instagram.com/dipzago/" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/ozago/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/ozago/',
+        cuit: '23-16583800-9',
+        dni: '16.583.800'
       },
       {
         id: 'karina-banfi',
@@ -382,14 +423,24 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Alejandra Torres',
         party: 'Provincias Unidas',
         province: 'Córdoba',
-        locationName: 'Córdoba, Argentina',
+        locationName: 'Jose Roque Funes 1695 - Barrio : Cerro de las Rosas, Cerro De Las Rosas, Córdoba, Argentina',
+        address: 'Jose Roque Funes 1695 - Barrio : Cerro de las Rosas, Cerro De Las Rosas, Córdoba (CP 5009)',
+        addressSource: 'https://w20argentina.com/empresa/torres-liliana-alejandra-27142911502',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/torres-liliana-alejandra-27142911502'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/alejandra-torres.png',
         socialMedia: {
           x: { handle: "@Ale_Torres60", url: "https://x.com/Ale_Torres60" },
           instagram: { handle: "@aletorres60", url: "https://www.instagram.com/aletorres60/" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/ltorres/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/ltorres/',
+        cuit: '27-14291150-2',
+        dni: '14.291.150'
       },
       {
         id: 'jorge-rizzotti',
@@ -452,28 +503,48 @@ export const SESSIONS_DATA: Session[] = [
         name: 'José Nuñez',
         party: 'Provincias Unidas',
         province: 'Santa Fe',
-        locationName: 'Rosario, Santa Fe, Argentina',
+        locationName: 'Las Heras Gral AV. 3777 Piso 6 Dpto. C, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Las Heras Gral AV. 3777 Piso 6 Dpto. C, CABA (CP 1425)',
+        addressSource: 'https://w20argentina.com/empresa/nunez-jose-carlos-20242920644',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/nunez-jose-carlos-20242920644'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/jose-nunez.png',
         socialMedia: {
           instagram: { handle: "@josenunezjurado", url: "https://www.instagram.com/josenunezjurado/" },
           facebook: { handle: "josenunezjurado", url: "https://www.facebook.com/josenunezjurado" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/jnunez/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/jnunez/',
+        cuit: '20-24292064-4',
+        dni: '24.292.064'
       },
       {
         id: 'gisela-scaglia',
         name: 'Gisela Scaglia',
         party: 'Provincias Unidas',
         province: 'Santa Fe',
-        locationName: 'Gálvez, Santa Fe, Argentina',
+        locationName: 'España 1039, Santa Fe, Argentina',
+        address: 'España 1039, Santa Fe (CP 2252)',
+        addressSource: 'https://w20argentina.com/empresa/scaglia-gisela-27254532164',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/scaglia-gisela-27254532164'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/gisela-scaglia.png',
         socialMedia: {
           instagram: { handle: "@giselascaglia", url: "https://www.instagram.com/giselascaglia/" },
           facebook: { handle: "gisela.scaglia", url: "https://www.facebook.com/gisela.scaglia" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/gscaglia/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/gscaglia/',
+        cuit: '27-25453216-4',
+        dni: '25.453.216'
       },
       {
         id: 'bernardo-biella',
@@ -508,14 +579,24 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Yolanda Vega',
         party: 'Innovación Federal',
         province: 'Salta',
-        locationName: 'Cerrillos, Salta, Argentina',
+        locationName: 'Ruta 26 KM 3 1/2 3 - Paraje : Bella Vista, Salta, Argentina',
+        address: 'Ruta 26 KM 3 1/2 3 - Paraje : Bella Vista, Salta (CP 4403)',
+        addressSource: 'https://w20argentina.com/empresa/vega-yolanda-graciela-27182307349',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/vega-yolanda-graciela-27182307349'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/yolanda-vega.png',
                 socialMedia: {
           x: { handle: "@YolandaVegaOK", url: "https://x.com/YolandaVegaOK" },
           instagram: { handle: "@yolandagvegadip", url: "https://www.instagram.com/yolandagvegadip" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/yvega/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/yvega/',
+        cuit: '27-18230734-9',
+        dni: '18.230.734'
       },
       {
         id: 'claudio-ariel-alvarez',
@@ -551,13 +632,23 @@ export const SESSIONS_DATA: Session[] = [
         name: 'Elia Marina Fernández',
         party: 'Independencia',
         province: 'Tucumán',
-        locationName: 'Aguilares, Tucumán, Argentina',
+        locationName: 'Suipacha 528, San Miguel De Tucuman, Tucumán, Argentina',
+        address: 'Suipacha 528, San Miguel De Tucuman, Tucumán (CP 4000)',
+        addressSource: 'https://w20argentina.com/empresa/fernandez-elia-marina-27167354918',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/fernandez-elia-marina-27167354918'
+          }
+        ],
         status: 'ausente',
         imageUrl: '/deputies/elia-marina-fernandez.png',
                 socialMedia: {
           instagram: { handle: "@eliamarinafernandez", url: "https://www.instagram.com/eliamarinafernandez" },
         },
-        profileUrl: 'https://www.hcdn.gob.ar/diputados/emfernandez/'
+        profileUrl: 'https://www.hcdn.gob.ar/diputados/emfernandez/',
+        cuit: '27-16735491-8',
+        dni: '16.735.491'
       },
       {
         id: 'gladys-medina',
@@ -693,7 +784,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Sabrina Ajmechet",
         party: "La Libertad Avanza",
         province: "Ciudad Autónoma de Buenos Aires",
-        locationName: "Ciudad Autónoma de Buenos Aires, Argentina",
+        locationName: 'Gallardo Angel AV. 854 Piso 1 Dpto. 4, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Gallardo Angel AV. 854 Piso 1 Dpto. 4, CABA (CP 1405)',
+        addressSource: 'https://w20argentina.com/empresa/ajmechet-sabrina-carlota-27290423894',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/ajmechet-sabrina-carlota-27290423894'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/sajmechet/',
         dni: '29.042.389',
@@ -869,7 +968,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Martín Aveiro",
         party: "Unión por la Patria",
         province: "Mendoza",
-        locationName: "Mendoza, Argentina",
+        locationName: 'Sarmiento 10 Manzana a, Mendoza, Argentina',
+        address: 'Sarmiento 10 Manzana a, Mendoza (CP 5565)',
+        addressSource: 'https://w20argentina.com/empresa/aveiro-martin-guillermo-20241811612',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/aveiro-martin-guillermo-20241811612'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/maveiro/',
         dni: '24.181.161',
@@ -902,7 +1009,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Fernanda Avila",
         party: "Elijo Catamarca",
         province: "Catamarca",
-        locationName: "Catamarca, Argentina",
+        locationName: 'Pedro Segura 0, Catamarca, Argentina',
+        address: 'Pedro Segura 0, Catamarca (CP 4705)',
+        addressSource: 'https://w20argentina.com/empresa/avila-maria-fernanda-27324151031',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/avila-maria-fernanda-27324151031'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mavila/',
         dni: '32.415.103',
@@ -967,7 +1082,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Carolina Basualdo",
         party: "Provincias Unidas",
         province: "Córdoba",
-        locationName: "Córdoba, Argentina",
+        locationName: 'Sarmiento 417, Despeñaderos, Córdoba, Argentina',
+        address: 'Sarmiento 417, Despeñaderos, Córdoba (CP 5121)',
+        addressSource: 'https://w20argentina.com/empresa/basualdo-carolina-del-valle-27264849638',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/basualdo-carolina-del-valle-27264849638'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/cbasualdo/',
         dni: '26.484.963',
@@ -1031,7 +1154,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Rocío Bonacci",
         party: "La Libertad Avanza",
         province: "Santa Fe",
-        locationName: "Santa Fe, Argentina",
+        locationName: 'Saenz Peña 1447, Santa Fe, Argentina',
+        address: 'Saenz Peña 1447, Santa Fe (CP 2132)',
+        addressSource: 'https://w20argentina.com/empresa/bonacci-rocio-belen-27396592881',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/bonacci-rocio-belen-27396592881'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/rbonacci/',
         dni: '39.659.288',
@@ -1099,7 +1230,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Gabriel Bornoroni",
         party: "La Libertad Avanza",
         province: "Córdoba",
-        locationName: "Córdoba, Argentina",
+        locationName: 'Caseros 670, Barrio Centro Sur, Córdoba, Argentina',
+        address: 'Caseros 670, Barrio Centro Sur, Córdoba (CP 5000)',
+        addressSource: 'https://w20argentina.com/empresa/bornoroni-gabriel-marcos-20266723181',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/bornoroni-gabriel-marcos-20266723181'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gbornoroni/',
         dni: '26.672.318',
@@ -1116,7 +1255,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Myriam Bregman",
         party: "PTS - Frente de Izquierda",
         province: "Ciudad Autónoma de Buenos Aires",
-        locationName: "Ciudad Autónoma de Buenos Aires, Argentina",
+        locationName: 'Alsina Adolfo 1360 Piso 3 Dpto. 304, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Alsina Adolfo 1360 Piso 3 Dpto. 304, CABA (CP 1088)',
+        addressSource: 'https://w20argentina.com/empresa/bregman-myriam-teresa-27226005531',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/bregman-myriam-teresa-27226005531'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mbregman/',
         dni: '22.600.553',
@@ -1148,7 +1295,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Eliana Bruno",
         party: "La Libertad Avanza",
         province: "Salta",
-        locationName: "Salta, Argentina",
+        locationName: 'Segundo Sombra 4 Manzana 102 - Barrio : 266 Viv, Salta, Argentina',
+        address: 'Segundo Sombra 4 Manzana 102 - Barrio : 266 Viv, Salta (CP 4530)',
+        addressSource: 'https://w20argentina.com/empresa/bruno-eliana-lorena-27337541599',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/bruno-eliana-lorena-27337541599'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ebruno/',
         dni: '33.754.159',
@@ -1183,7 +1338,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Santiago Cafiero",
         party: "Unión por la Patria",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Martin y Omar 230 Piso 3 Dpto. D, San Isidro, Buenos Aires, Argentina',
+        address: 'Martin y Omar 230 Piso 3 Dpto. D, San Isidro, Buenos Aires (CP 1642)',
+        addressSource: 'https://w20argentina.com/empresa/cafiero-santiago-andres-20273754041',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/cafiero-santiago-andres-20273754041'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/scafiero/',
         dni: '27.375.404',
@@ -1247,7 +1410,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Florencia Carignano",
         party: "Unión por la Patria",
         province: "Santa Fe",
-        locationName: "Santa Fe, Argentina",
+        locationName: 'San Geronimo 3743 Piso 3 Dpto. B - Barrio : Santa Fe, Santa Fe, Argentina',
+        address: 'San Geronimo 3743 Piso 3 Dpto. B - Barrio : Santa Fe, Santa Fe (CP 3000)',
+        addressSource: 'https://w20argentina.com/empresa/carignano-maria-florencia-27266811425',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/carignano-maria-florencia-27266811425'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mcarignano/',
         dni: '26.681.142',
@@ -1296,7 +1467,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Carlos Daniel Castagneto",
         party: "Unión por la Patria",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: '4 2047, La Plata Sudeste Calle 50 Ambas Veredas, Buenos Aires, Argentina',
+        address: '4 2047, La Plata Sudeste Calle 50 Ambas Veredas, Buenos Aires (CP 1900)',
+        addressSource: 'https://w20argentina.com/empresa/castagneto-carlos-daniel-20139425163',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/castagneto-carlos-daniel-20139425163'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ccastagneto/',
         dni: '13.942.516',
@@ -1394,7 +1573,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Facundo Correa Llano",
         party: "La Libertad Avanza",
         province: "Mendoza",
-        locationName: "Mendoza, Argentina",
+        locationName: 'Viamonte 3889, Lujan De Cuyo, Mendoza, Argentina',
+        address: 'Viamonte 3889, Lujan De Cuyo, Mendoza (CP 5507)',
+        addressSource: 'https://w20argentina.com/empresa/correa-llano-facundo-20268386131',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/correa-llano-facundo-20268386131'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/fcorreal/',
         dni: '26.838.613',
@@ -1452,7 +1639,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Romina Diez",
         party: "La Libertad Avanza",
         province: "Santa Fe",
-        locationName: "Santa Fe, Argentina",
+        locationName: 'San Martin 370 Piso 5 Dpto. 3, Santa Fe, Argentina',
+        address: 'San Martin 370 Piso 5 Dpto. 3, Santa Fe (CP 2000)',
+        addressSource: 'https://w20argentina.com/empresa/diez-villagra-romina-andrea-27280582536',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/diez-villagra-romina-andrea-27280582536'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/rdiezv/',
         dni: '28.058.253',
@@ -1563,7 +1758,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Maximiliano Ferraro",
         party: "Coalición Cívica",
         province: "Ciudad Autónoma de Buenos Aires",
-        locationName: "Ciudad Autónoma de Buenos Aires, Argentina",
+        locationName: 'Yrigoyen Hipolito 3150 Piso PB Dpto. 8, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Yrigoyen Hipolito 3150 Piso PB Dpto. 8, CABA (CP 1207)',
+        addressSource: 'https://w20argentina.com/empresa/ferraro-maximiliano-20250442433',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/ferraro-maximiliano-20250442433'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mferraro/',
         dni: '25.044.243',
@@ -1582,7 +1785,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Alida Ferreyra",
         party: "La Libertad Avanza",
         province: "Ciudad Autónoma de Buenos Aires",
-        locationName: "Ciudad Autónoma de Buenos Aires, Argentina",
+        locationName: 'Talcahuano 1071 Piso 1 Dpto. H - Barrio : Recoleta, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Talcahuano 1071 Piso 1 Dpto. H - Barrio : Recoleta, CABA (CP 1013)',
+        addressSource: 'https://w20argentina.com/empresa/ferreyra-alida-monica-27262351195',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/ferreyra-alida-monica-27262351195'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/aferreyra/',
         dni: '26.235.119',
@@ -1630,7 +1841,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Mónica Frade",
         party: "Coalición Cívica",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Bron 559 Piso 1 Dpto. A, Quilmes, Buenos Aires, Argentina',
+        address: 'Bron 559 Piso 1 Dpto. A, Quilmes, Buenos Aires (CP 1878)',
+        addressSource: 'https://w20argentina.com/empresa/frade-monica-edith-23127596824',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/frade-monica-edith-23127596824'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mfrade/',
         dni: '12.759.682',
@@ -1665,7 +1884,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Maira Frias",
         party: "La Libertad Avanza",
         province: "Chubut",
-        locationName: "Chubut, Argentina",
+        locationName: 'La Nueva Provincia 2263, Chubut, Argentina',
+        address: 'La Nueva Provincia 2263, Chubut (CP 9000)',
+        addressSource: 'https://w20argentina.com/empresa/frias-maira-raquel-27330723578',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/frias-maira-raquel-27330723578'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mrfrias/',
         dni: '33.072.357',
@@ -1702,7 +1929,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Sebastián Galmarini",
         party: "Unión por la Patria",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Doctor Wells 3183, Beccar, Buenos Aires, Argentina',
+        address: 'Doctor Wells 3183, Beccar, Buenos Aires (CP 1643)',
+        addressSource: 'https://w20argentina.com/empresa/galmarini-sebastian-20266508329',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/galmarini-sebastian-20266508329'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/sgalmarini/',
         dni: '26.650.832',
@@ -2009,7 +2244,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Patricia Holzman",
         party: "La Libertad Avanza",
         province: "Ciudad Autónoma de Buenos Aires",
-        locationName: "Ciudad Autónoma de Buenos Aires, Argentina",
+        locationName: 'Elcano AV. 3525 Piso 1 Dpto. D, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Elcano AV. 3525 Piso 1 Dpto. D, CABA (CP 1426)',
+        addressSource: 'https://w20argentina.com/empresa/holzman-patricia-noemi-27176050034',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/holzman-patricia-noemi-27176050034'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/pholzman/',
         dni: '17.605.003',
@@ -2068,7 +2311,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "María Cecilia Ibañez",
         party: "La Libertad Avanza",
         province: "Córdoba",
-        locationName: "Córdoba, Argentina",
+        locationName: 'Chacabuco 360 Piso 5 Dpto. A, Barrio Centro Sur, Córdoba, Argentina',
+        address: 'Chacabuco 360 Piso 5 Dpto. A, Barrio Centro Sur, Córdoba (CP 5000)',
+        addressSource: 'https://w20argentina.com/empresa/ibanez-maria-cecilia-23171578434',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/ibanez-maria-cecilia-23171578434'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mibanez/',
         dni: '17.157.843',
@@ -2101,7 +2352,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Máximo Carlos Kirchner",
         party: "Unión por la Patria",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Mascarello 441, Rio Gallegos, Santa Cruz, Argentina',
+        address: 'Mascarello 441, Rio Gallegos, Santa Cruz (CP 9400)',
+        addressSource: 'https://w20argentina.com/empresa/kirchner-maximo-carlos-20258693109',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/kirchner-maximo-carlos-20258693109'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mkirchner/',
         dni: '25.869.310',
@@ -2162,7 +2421,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Lilia Lemoine",
         party: "La Libertad Avanza",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Llavallol 1755 Piso PB Dpto. B, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Llavallol 1755 Piso PB Dpto. B, CABA (CP 1407)',
+        addressSource: 'https://w20argentina.com/empresa/bolukalo-lemoine-lilia-adela-27282985263',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/bolukalo-lemoine-lilia-adela-27282985263'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/lbolukalol/',
         officialEmail: 'lbolukalol@hcdn.gob.ar',
@@ -2170,7 +2437,9 @@ export const SESSIONS_DATA: Session[] = [
         socialMedia: {
           x: { handle: '@lilialemoine', url: 'https://x.com/lilialemoine' },
           instagram: { handle: '@lilialemoine', url: 'https://www.instagram.com/lilialemoine/' },
-        }
+        },
+        cuit: '27-28298526-3',
+        dni: '28.298.526'
       },
       {
         id: 'andres-leone',
@@ -2194,7 +2463,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Mercedes Llano",
         party: "La Libertad Avanza",
         province: "Mendoza",
-        locationName: "Mendoza, Argentina",
+        locationName: 'Alvarez Thomas 333 Dpto. 3, Godoy Cruz, Mendoza, Argentina',
+        address: 'Alvarez Thomas 333 Dpto. 3, Godoy Cruz, Mendoza (CP 5501)',
+        addressSource: 'https://w20argentina.com/empresa/llano-maria-mercedes-27267928539',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/llano-maria-mercedes-27267928539'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mllano/',
         dni: '26.792.853',
@@ -2224,7 +2501,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Johanna Sabrina Longo",
         party: "La Libertad Avanza",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Miistro Brin 3613, Buenos Aires, Argentina',
+        address: 'Miistro Brin 3613, Buenos Aires (CP 1824)',
+        addressSource: 'https://w20argentina.com/empresa/longo-johanna-sabrina-27296966075',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/longo-johanna-sabrina-27296966075'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jslongo/',
         dni: '29.696.607',
@@ -2298,7 +2583,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Lorena Macyszyn",
         party: "La Libertad Avanza",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Don Bosco 1371, Buenos Aires, Argentina',
+        address: 'Don Bosco 1371, Buenos Aires (CP 1642)',
+        addressSource: 'https://w20argentina.com/empresa/macyszyn-maria-lorena-27267660633',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/macyszyn-maria-lorena-27267660633'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mmacyszyn/',
         dni: '26.766.063',
@@ -2413,7 +2706,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Varinia Lis Marín",
         party: "Unión por la Patria",
         province: "La Pampa",
-        locationName: "La Pampa, Argentina",
+        locationName: 'Juan XXIII 266, Santa Rosa, La Pampa, Argentina',
+        address: 'Juan XXIII 266, Santa Rosa, La Pampa (CP 6300)',
+        addressSource: 'https://w20argentina.com/empresa/marin-varinia-lis-27201070746',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/marin-varinia-lis-27201070746'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/vmarin/',
         dni: '20.107.074',
@@ -2446,7 +2747,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Martín Matzkin",
         party: "La Libertad Avanza",
         province: "La Pampa",
-        locationName: "La Pampa, Argentina",
+        locationName: '25 de Mayo 26, Santa Rosa, La Pampa, Argentina',
+        address: '25 de Mayo 26, Santa Rosa, La Pampa (CP 6300)',
+        addressSource: 'https://w20argentina.com/empresa/matzkin-martin-20237375263',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/matzkin-martin-20237375263'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mmatzkin/',
         dni: '23.737.526',
@@ -2479,7 +2788,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Martín Menem",
         party: "La Libertad Avanza",
         province: "La Rioja",
-        locationName: "La Rioja, Argentina",
+        locationName: 'Rivadavia 358 - Barrio : Centro, La Rioja, Argentina',
+        address: 'Rivadavia 358 - Barrio : Centro, La Rioja (CP 5300)',
+        addressSource: 'https://w20argentina.com/empresa/menem-martin-alexis-20245792906',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/menem-martin-alexis-20245792906'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mmenem/',
         dni: '24.579.290',
@@ -2512,7 +2829,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Guillermo Michel",
         party: "Unión por la Patria",
         province: "Entre Ríos",
-        locationName: "Entre Ríos, Argentina",
+        locationName: 'Pringles 778, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Pringles 778, CABA (CP 1183)',
+        addressSource: 'https://w20argentina.com/empresa/michel-guillermo-20256611210',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/michel-guillermo-20256611210'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gmichel/',
         dni: '25.661.121',
@@ -2559,7 +2884,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Soledad Molinuevo",
         party: "La Libertad Avanza",
         province: "Tucumán",
-        locationName: "Tucumán, Argentina",
+        locationName: 'Muñecas 1216, Tucumán, Argentina',
+        address: 'Muñecas 1216, Tucumán (CP 4000)',
+        addressSource: 'https://w20argentina.com/empresa/molinuevo-maria-soledad-27225573641',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/molinuevo-maria-soledad-27225573641'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mmolinuevo/',
         dni: '22.557.364',
@@ -2592,7 +2925,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Soledad Mondaca",
         party: "La Libertad Avanza",
         province: "Neuquén",
-        locationName: "Neuquén, Argentina",
+        locationName: 'Maipo 1179 - Barrio : Meopp, Neuquén, Argentina',
+        address: 'Maipo 1179 - Barrio : Meopp, Neuquén (CP 8319)',
+        addressSource: 'https://w20argentina.com/empresa/mondaca-margarita-soledad-27340841366',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/mondaca-margarita-soledad-27340841366'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mmondaca/',
         dni: '34.084.136',
@@ -2637,7 +2978,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Juan Pablo Montenegro",
         party: "La Libertad Avanza",
         province: "Santa Fe",
-        locationName: "Santa Fe, Argentina",
+        locationName: 'Suipacha 605, Santa Fe, Argentina',
+        address: 'Suipacha 605, Santa Fe (CP 2142)',
+        addressSource: 'https://w20argentina.com/empresa/montenegro-juan-pablo-20266676531',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/montenegro-juan-pablo-20266676531'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jpmontenegro/',
         dni: '26.667.653',
@@ -2650,7 +2999,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Roxana Monzón",
         party: "Unión por la Patria",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Lote Agricola 282, Misiones, Argentina',
+        address: 'Lote Agricola 282, Misiones (CP 3350)',
+        addressSource: 'https://w20argentina.com/empresa/monzon-roxana-elizabeth-27239191288',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/monzon-roxana-elizabeth-27239191288'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/rmonzon/',
         dni: '23.919.128',
@@ -2667,7 +3024,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Francisco Morchio",
         party: "La Libertad Avanza",
         province: "Entre Ríos",
-        locationName: "Entre Ríos, Argentina",
+        locationName: 'Estacion Lazo 0, Lazo, Entre Ríos, Argentina',
+        address: 'Estacion Lazo 0, Lazo, Entre Ríos (CP 2841)',
+        addressSource: 'https://w20argentina.com/empresa/morchio-francisco-alejandro-20245607068',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/morchio-francisco-alejandro-20245607068'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/fmorchio/',
         dni: '24.560.706',
@@ -2764,7 +3129,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Miriam Niveyro",
         party: "La Libertad Avanza",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Alsina 3100, Claypole, Buenos Aires, Argentina',
+        address: 'Alsina 3100, Claypole, Buenos Aires (CP 1849)',
+        addressSource: 'https://w20argentina.com/empresa/niveyro-miriam-del-carmen-27200012513',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/niveyro-miriam-del-carmen-27200012513'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mniveyro/',
         dni: '20.001.251',
@@ -2892,7 +3265,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Sebastián Pareja",
         party: "La Libertad Avanza",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Mitre Bartolome 1371 Piso 2 Dpto. D, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Mitre Bartolome 1371 Piso 2 Dpto. D, CABA (CP 1036)',
+        addressSource: 'https://w20argentina.com/empresa/pareja-sebastian-miguel-20249630161',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/pareja-sebastian-miguel-20249630161'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/spareja/',
         dni: '24.963.016',
@@ -2909,7 +3290,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "María Graciela Parola",
         party: "Unión por la Patria",
         province: "Formosa",
-        locationName: "Formosa, Argentina",
+        locationName: 'Salta 57, Formosa, Argentina',
+        address: 'Salta 57, Formosa (CP 3600)',
+        addressSource: 'https://w20argentina.com/empresa/parola-maria-graciela-27267107721',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/parola-maria-graciela-27267107721'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mgparola/',
         dni: '26.710.772',
@@ -2952,7 +3341,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Esteban Paulón",
         party: "Provincias Unidas",
         province: "Santa Fe",
-        locationName: "Santa Fe, Argentina",
+        locationName: '9 de Julio 1785 Piso 5 Dpto. B, Santa Fe, Argentina',
+        address: '9 de Julio 1785 Piso 5 Dpto. B, Santa Fe (CP 2000)',
+        addressSource: 'https://w20argentina.com/empresa/paulon-esteban-20265696725',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/paulon-esteban-20265696725'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/epaulon/',
         dni: '26.569.672',
@@ -3125,7 +3522,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "María Celeste Ponce",
         party: "La Libertad Avanza",
         province: "Córdoba",
-        locationName: "Córdoba, Argentina",
+        locationName: 'Juan B. Justo 526, Huinca Renanco, Córdoba, Argentina',
+        address: 'Juan B. Justo 526, Huinca Renanco, Córdoba (CP 6270)',
+        addressSource: 'https://w20argentina.com/empresa/ponce-maria-celeste-27329016817',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/ponce-maria-celeste-27329016817'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/mponce/',
         dni: '32.901.681',
@@ -3155,7 +3560,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Agustina Lucrecia Propato",
         party: "Unión por la Patria",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Sucre Antonio Mcal. 2980 Piso PB Dpto. A, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Sucre Antonio Mcal. 2980 Piso PB Dpto. A, CABA (CP 1428)',
+        addressSource: 'https://w20argentina.com/empresa/propato-agustina-lucrecia-27295495540',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/propato-agustina-lucrecia-27295495540'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/apropato/',
         dni: '29.549.554',
@@ -3213,7 +3626,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Verónica Razzini",
         party: "La Libertad Avanza",
         province: "Santa Fe",
-        locationName: "Santa Fe, Argentina",
+        locationName: 'AV. Arijon 2542, Rosario Sud, Santa Fe, Argentina',
+        address: 'AV. Arijon 2542, Rosario Sud, Santa Fe (CP 2000)',
+        addressSource: 'https://w20argentina.com/empresa/razzini-veronica-gabriela-27280877188',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/razzini-veronica-gabriela-27280877188'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/vrazzini/',
         dni: '28.087.718',
@@ -3270,7 +3691,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Laura Elena Rodríguez Machado",
         party: "La Libertad Avanza",
         province: "Córdoba",
-        locationName: "Córdoba, Argentina",
+        locationName: 'Jacinto Rios 321 Piso 6 Dpto. C - Barrio : General Paz, Barrio General Paz Norte, Córdoba, Argentina',
+        address: 'Jacinto Rios 321 Piso 6 Dpto. C - Barrio : General Paz, Barrio General Paz Norte, Córdoba (CP 5000)',
+        addressSource: 'https://w20argentina.com/empresa/rodriguez-machado-laura-elena-27148917987',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/rodriguez-machado-laura-elena-27148917987'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/lrodriguezm/',
         dni: '14.891.798',
@@ -3315,7 +3744,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Yamila Ruíz",
         party: "Argentina Federal",
         province: "Misiones",
-        locationName: "Misiones, Argentina",
+        locationName: 'Tomas Guido 2940, Misiones, Argentina',
+        address: 'Tomas Guido 2940, Misiones (CP 3300)',
+        addressSource: 'https://w20argentina.com/empresa/ruiz-yamila-lisette-27364093786',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/ruiz-yamila-lisette-27364093786'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/yruiz/',
         dni: '36.409.378',
@@ -3328,7 +3765,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Marina Dorotea Salzmann",
         party: "Unión por la Patria",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Ugarteche 3296 Piso 2 Dpto. B, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Ugarteche 3296 Piso 2 Dpto. B, CABA (CP 1425)',
+        addressSource: 'https://w20argentina.com/empresa/salzmann-marina-dorotea-27352538626',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/salzmann-marina-dorotea-27352538626'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/msalzmann/',
         dni: '35.253.862',
@@ -3459,7 +3904,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Guillermo Snopek",
         party: "Unión por la Patria",
         province: "Jujuy",
-        locationName: "Jujuy, Argentina",
+        locationName: 'Otero 153, San Salvador De Jujuy, Jujuy, Argentina',
+        address: 'Otero 153, San Salvador De Jujuy, Jujuy (CP 4600)',
+        addressSource: 'https://w20argentina.com/empresa/snopek-guillermo-eugenio-ma-20243992371',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/snopek-guillermo-eugenio-ma-20243992371'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/gsnopek/',
         dni: '24.399.237',
@@ -3483,7 +3936,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Julia Strada",
         party: "Unión por la Patria",
         province: "Buenos Aires",
-        locationName: "Buenos Aires, Argentina",
+        locationName: 'Ayacucho 236 Piso 2 Dpto. A - Entre las Calles : Sarmiento y Peron, Ciudad Autónoma de Buenos Aires, Argentina',
+        address: 'Ayacucho 236 Piso 2 Dpto. A - Entre las Calles : Sarmiento y Peron, CABA (CP 1025)',
+        addressSource: 'https://w20argentina.com/empresa/strada-rodriguez-julia-27344084039',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/strada-rodriguez-julia-27344084039'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/jstrada/',
         dni: '34.408.403',
@@ -3635,7 +4096,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "César Treffinger",
         party: "La Libertad Avanza",
         province: "Chubut",
-        locationName: "Chubut, Argentina",
+        locationName: 'Sarmiento 797, Bahia Blanca, Buenos Aires, Argentina',
+        address: 'Sarmiento 797, Bahia Blanca, Buenos Aires (CP 8000)',
+        addressSource: 'https://w20argentina.com/empresa/treffinger-cesar-hernan-20242671652',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/treffinger-cesar-hernan-20242671652'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ctreffinger/',
         dni: '24.267.165',
@@ -3738,7 +4207,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Lorena Villaverde",
         party: "La Libertad Avanza",
         province: "Río Negro",
-        locationName: "Río Negro, Argentina",
+        locationName: '9 de Julio 122, San Antonio Oeste, Río Negro, Argentina',
+        address: '9 de Julio 122, San Antonio Oeste, Río Negro (CP 8520)',
+        addressSource: 'https://w20argentina.com/empresa/villaverde-maria-lorena-23238322464',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/villaverde-maria-lorena-23238322464'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/lvillaverde/',
         dni: '23.832.246',
@@ -3879,7 +4356,15 @@ export const SESSIONS_DATA: Session[] = [
         name: "Natalia de la Sota",
         party: "Defendamos Córdoba",
         province: "Córdoba",
-        locationName: "Córdoba, Argentina",
+        locationName: 'Tucuman 26 Piso 7 - Esquina : Dean Funes y Tucuman, Barrio Centro Sur, Córdoba, Argentina',
+        address: 'Tucuman 26 Piso 7 - Esquina : Dean Funes y Tucuman, Barrio Centro Sur, Córdoba (CP 5000)',
+        addressSource: 'https://w20argentina.com/empresa/de-la-sota-natalia-27248854265',
+        addressSources: [
+          {
+            label: 'Registro comercial / fiscal AFIP (W20)',
+            url: 'https://w20argentina.com/empresa/de-la-sota-natalia-27248854265'
+          }
+        ],
         status: 'presente',
         profileUrl: 'https://www.hcdn.gob.ar/diputados/ndelasota/',
         dni: '24.885.426',
@@ -3907,6 +4392,16 @@ export const SESSIONS_DATA: Session[] = [
     ]
   }
 ];
+
+// Vincular automáticamente las Declaraciones Juradas Patrimoniales Integrales (DDJJ) oficiales
+SESSIONS_DATA.forEach((session) => {
+  session.deputies.forEach((deputy) => {
+    const decl = DEPUTY_DECLARATIONS[deputy.id];
+    if (decl) {
+      deputy.declaration = decl;
+    }
+  });
+});
 
 export function getDeputySalary(deputy: { province: string; hasDesarraigo?: boolean; estimatedDietGross?: number; estimatedDietNet?: number }) {
   // If explicitly overridden on the deputy object:
