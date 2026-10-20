@@ -183,20 +183,6 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
             <p>
               <strong>Actividad en Recinto:</strong> Figura entre los legisladores ausentes que impidieron alcanzar el quórum de 129 diputados en la sesión especial convocada para rechazar el DNU 70/2023 y tratar el financiamiento universitario.
             </p>
-            {deputy.profileUrl && (
-              <p>
-                <strong>Perfil Oficial HCDN:</strong>{' '}
-                <a
-                  href={deputy.profileUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sky-600 hover:text-sky-800 underline inline-flex items-center gap-1 font-medium"
-                >
-                  <span>{deputy.profileUrl}</span>
-                  <ExternalLink className="w-3 h-3 flex-shrink-0" />
-                </a>
-              </p>
-            )}
 
             {deputy.socialMedia && Object.keys(deputy.socialMedia).length > 0 && (
               <div className="pt-2 border-t border-slate-200/80 mt-2">
