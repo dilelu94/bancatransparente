@@ -22,6 +22,27 @@ function formatVehicleName(desc: string): string {
   return cleaned;
 }
 
+const getDeclarationBadge = (anio?: number): { label: string; className: string } | null => {
+  if (!anio) return null;
+  const diff = 2024 - anio;
+  if (diff <= 0) {
+    return {
+      label: `última declaración jurada (${anio})`,
+      className: 'bg-white/10 text-white border-white/20'
+    };
+  } else if (diff === 1) {
+    return {
+      label: `última declaración jurada (${anio})`,
+      className: 'bg-amber-500/20 text-amber-300 border-amber-500/40 font-medium'
+    };
+  } else {
+    return {
+      label: `última declaración jurada (${anio})`,
+      className: 'bg-rose-500/20 text-rose-300 border-rose-500/40 font-medium'
+    };
+  }
+};
+
 interface DeputyModalProps {
   deputy: Deputy | null;
   onClose: () => void;
@@ -46,6 +67,7 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
 
   if (!deputy) return null;
 
+  const declBadge = getDeclarationBadge(deputy.declaration?.anio);
   const vehicles = deputy.declaration?.vehiculos || [];
   const searchQuery = encodeURIComponent(`${deputy.name} (${deputy.party})`);
   const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}&sourceid=chrome&ie=UTF-8&source=chrome.ctxt`;
@@ -81,9 +103,9 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="bg-slate-900 text-white p-6 flex items-start justify-between relative">
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-slate-800 border-2 border-slate-700 text-slate-200 flex items-center justify-center font-bold text-xl shadow overflow-hidden">
+        <div className="bg-slate-900 text-white p-6 flex items-start justify-between relative gap-4">
+          <div className="flex items-center gap-4 min-w-0">
+            <div className="w-16 h-16 rounded-full bg-slate-800 border-2 border-slate-700 text-slate-200 flex items-center justify-center font-bold text-xl shadow overflow-hidden flex-shrink-0">
               {deputy.imageUrl ? (
                 <img
                   src={deputy.imageUrl}
@@ -97,29 +119,39 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
                 deputy.name.split(' ').slice(0, 2).map((n) => n[0]).join('')
               )}
             </div>
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <span className="text-[11px] font-semibold uppercase px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">
                   Sin Quórum
                 </span>
                 <span className="text-xs text-slate-400">H. Cámara de Diputados</span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold mt-1 text-white">
+              <h2 className="text-xl sm:text-2xl font-bold mt-1 text-white truncate">
                 {deputy.name}
               </h2>
-              <p className="text-sm text-sky-400 font-medium">
+              <p className="text-sm text-sky-400 font-medium truncate">
                 {deputy.party} &bull; {deputy.province}
               </p>
             </div>
           </div>
 
-          <button
-            onClick={onClose}
-            aria-label="Cerrar modal"
-            className="text-slate-400 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-3 flex-shrink-0">
+            {declBadge && (
+              <span
+                className={`text-[11px] px-2.5 py-1 rounded-full border transition-colors ${declBadge.className}`}
+                title={`Declaración Jurada Patrimonial Integral presentada ante la Oficina Anticorrupción (${deputy.declaration?.anio})`}
+              >
+                {declBadge.label}
+              </span>
+            )}
+            <button
+              onClick={onClose}
+              aria-label="Cerrar modal"
+              className="text-slate-400 hover:text-white p-2 rounded-lg hover:bg-slate-800 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Modal Body */}
