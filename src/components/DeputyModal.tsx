@@ -1,7 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Deputy } from '../types';
-import { X, Search, MapPin, Building2, ExternalLink, Home, MessageSquarePlus, Github, Banknote, Info } from 'lucide-react';
+import { X, Search, MapPin, Building2, ExternalLink, Home, MessageSquarePlus, Github, Banknote, Info, Car, ChevronDown, ChevronUp } from 'lucide-react';
 import { getDeputySalary, formatCurrencyARS, SALARY_CONFIG } from '../data/sessions';
+
+function formatVehicleName(desc: string): string {
+  let cleaned = desc.replace(/^Modelo:\s*/i, '').trim();
+  cleaned = cleaned.replace(/\|/g, ' ');
+  cleaned = cleaned.replace(/CHEVROLETCHEVROLET/gi, 'Chevrolet ');
+  cleaned = cleaned.replace(/FORD(?=[A-Z])/g, 'Ford ');
+  cleaned = cleaned.replace(/MERCEDES BENZ(?=[A-Z])/g, 'Mercedes Benz ');
+  cleaned = cleaned.replace(/YAMAHA(?=[A-Z])/g, 'Yamaha ');
+  cleaned = cleaned.replace(/HONDA(?=[A-Z])/g, 'Honda ');
+  cleaned = cleaned.replace(/TOYOTA(?=[A-Z])/g, 'Toyota ');
+  cleaned = cleaned.replace(/VOLKSWAGEN(?=[A-Z])/g, 'Volkswagen ');
+  cleaned = cleaned.replace(/JEEP(?=[A-Z])/g, 'Jeep ');
+  cleaned = cleaned.replace(/CITROEN(?=[A-Z])/g, 'Citroën ');
+  cleaned = cleaned.replace(/SUZUKI(?=[A-Z])/g, 'Suzuki ');
+  cleaned = cleaned.replace(/KTM(?=[A-Z])/g, 'KTM ');
+  cleaned = cleaned.replace(/HUSQVARNA(?=[A-Z])/g, 'Husqvarna ');
+  if (cleaned.toLowerCase() === 'mg b') return 'MG B Roadster Clásico Inglés';
+  return cleaned;
+}
 
 interface DeputyModalProps {
   deputy: Deputy | null;
@@ -23,8 +42,11 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
     };
   }, [deputy, onClose]);
 
+  const [showVehicles, setShowVehicles] = useState<boolean>(false);
+
   if (!deputy) return null;
 
+  const vehicles = deputy.declaration?.vehiculos || [];
   const searchQuery = encodeURIComponent(`${deputy.name} (${deputy.party})`);
   const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}&sourceid=chrome&ie=UTF-8&source=chrome.ctxt`;
   
@@ -186,6 +208,84 @@ export const DeputyModal: React.FC<DeputyModalProps> = ({ deputy, onClose }) => 
               </div>
             )}
           </div>
+
+          {/* Vehículos Declarados (DDJJ Oficial) */}
+          {vehicles.length > 0 && (
+            <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden text-xs">
+              <button
+                type="button"
+                onClick={() => setShowVehicles(!showVehicles)}
+                className="w-full p-4 flex items-center justify-between text-left hover:bg-slate-100/80 transition-colors font-medium text-slate-900"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold">
+                    <Car className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-slate-900 block text-sm">
+                      Vehículos ({vehicles.length} declarados)
+                    </span>
+                    <span className="text-[11px] text-slate-500 font-normal">
+                      Flota automotor declarada ante la Oficina Anticorrupción
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-semibold text-sky-700 bg-sky-50 px-2.5 py-1 rounded-md border border-sky-200">
+                    {showVehicles ? 'Ocultar lista' : 'Ver vehículos'}
+                  </span>
+                  {showVehicles ? (
+                    <ChevronUp className="w-4 h-4 text-slate-600" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-slate-600" />
+                  )}
+                </div>
+              </button>
+
+              {showVehicles && (
+                <div className="p-4 pt-1 border-t border-slate-200 space-y-2.5 bg-white">
+                  <div className="text-[11px] text-slate-500 pb-1 italic border-b border-slate-100 flex items-center justify-between">
+                    <span>Valuación fiscal oficial (DDJJ {deputy.declaration?.anio || 2024})</span>
+                    <span>Dominio reservado por Ley 25.326</span>
+                  </div>
+                  <div className="space-y-2">
+                    {vehicles.map((v, idx) => (
+                      <div
+                        key={idx}
+                        className="p-3 rounded-lg border border-slate-200 bg-slate-50/70 hover:bg-slate-50 transition-colors"
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <strong className="text-slate-900 font-semibold text-xs leading-snug">
+                            {formatVehicleName(v.descripcion)}
+                          </strong>
+                          <span className="font-mono text-emerald-700 font-bold text-xs whitespace-nowrap bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                            {formatCurrencyARS(v.importe)}
+                          </span>
+                        </div>
+                        <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-600">
+                          {v.anioFabricacion && (
+                            <span>
+                              <strong>Año:</strong> {v.anioFabricacion}
+                            </span>
+                          )}
+                          {v.porcentaje && (
+                            <span>
+                              <strong>Titularidad:</strong> {v.porcentaje}%
+                            </span>
+                          )}
+                          {v.fechaIngreso && (
+                            <span>
+                              <strong>Adquisición:</strong> {v.fechaIngreso}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Address and Map or PR Callout */}
           {deputy.address && mapEmbedUrl ? (

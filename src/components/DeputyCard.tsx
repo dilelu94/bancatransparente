@@ -122,11 +122,13 @@ export const DeputyCard: React.FC<DeputyCardProps> = ({ deputy, onClick }) => {
       </div>
 
       <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-        <span className="flex items-center gap-1 truncate font-medium">
-          <MapPin className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
-          <span className="truncate">{deputy.province}</span>
+        <span className="flex items-center gap-1.5 truncate font-medium" title={deputy.address || deputy.locationName || deputy.province}>
+          <MapPin className={`w-3.5 h-3.5 flex-shrink-0 ${deputy.address ? 'text-sky-600' : 'text-slate-400'}`} />
+          <span className="truncate">
+            {deputy.address ? deputy.address : deputy.province}
+          </span>
         </span>
-        <span className="text-sky-600 font-semibold group-hover:translate-x-0.5 transition-transform">
+        <span className="text-sky-600 font-semibold group-hover:translate-x-0.5 transition-transform flex-shrink-0 ml-2">
           Ver ficha &rarr;
         </span>
       </div>
