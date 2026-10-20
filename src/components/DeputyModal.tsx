@@ -24,18 +24,23 @@ function formatVehicleName(desc: string): string {
 
 const getDeclarationBadge = (anio?: number): { label: string; className: string } | null => {
   if (!anio) return null;
-  const diff = 2024 - anio;
+  // Año actual de la sesión / calendario: 2026
+  const currentYear = 2026;
+  const diff = currentYear - anio;
   if (diff <= 0) {
+    // De este año (2026): blanco
     return {
       label: `última declaración jurada (${anio})`,
       className: 'bg-white/10 text-white border-white/20'
     };
   } else if (diff === 1) {
+    // Hace 1 año (2025): amarillo
     return {
       label: `última declaración jurada (${anio})`,
       className: 'bg-amber-500/20 text-amber-300 border-amber-500/40 font-medium'
     };
   } else {
+    // 2 años o más (2024 o anteriores): rojo
     return {
       label: `última declaración jurada (${anio})`,
       className: 'bg-rose-500/20 text-rose-300 border-rose-500/40 font-medium'
